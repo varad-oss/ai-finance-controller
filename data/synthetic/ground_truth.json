@@ -1,0 +1,932 @@
+{
+  "metadata": {
+    "generated_at": "2026-09-02T21:20:13.070984",
+    "total_records": 120,
+    "matchable_records": 100,
+    "exception_records": 20
+  },
+  "matches": [
+    {
+      "oms_order_ref": "ORD-2024-0001",
+      "gateway_payment_id": "pay_TpigTHKbfoLISR",
+      "recon_entity_id": "pay_TpigTHKbfoLISR",
+      "bank_utr": "UTIB20419026831067",
+      "settlement_id": "setl_ABr1VjArnVgxwv",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0002",
+      "gateway_payment_id": "pay_obtqn62tOy4Cqp",
+      "recon_entity_id": "pay_obtqn62tOy4Cqp",
+      "bank_utr": "UTIB03959807652614",
+      "settlement_id": "setl_IqK3yn9FfcgMXA",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0003",
+      "gateway_payment_id": "pay_2Ztd26fEeVVhDI",
+      "recon_entity_id": "pay_2Ztd26fEeVVhDI",
+      "bank_utr": "UTIB35220629802621",
+      "settlement_id": "setl_q2AnHTmt9OBGhn",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0004",
+      "gateway_payment_id": "pay_Arp5B1Id9Z850k",
+      "recon_entity_id": "pay_Arp5B1Id9Z850k",
+      "bank_utr": "UTIB12955705581901",
+      "settlement_id": "setl_Enydx9qWCA79IS",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0005",
+      "gateway_payment_id": "pay_aMIgHFiveprBHs",
+      "recon_entity_id": "pay_aMIgHFiveprBHs",
+      "bank_utr": "UTIB36852906803191",
+      "settlement_id": "setl_8YGPI5g2q3Ujrn",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0006",
+      "gateway_payment_id": "pay_PvI28U5okXkzl5",
+      "recon_entity_id": "pay_PvI28U5okXkzl5",
+      "bank_utr": "UTIB82632073568308",
+      "settlement_id": "setl_WzPTpjRxcDm4vY",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0007",
+      "gateway_payment_id": "pay_65MPh3FPuRIlPx",
+      "recon_entity_id": "pay_65MPh3FPuRIlPx",
+      "bank_utr": "UTIB97626609238109",
+      "settlement_id": "setl_UkJzZsnWLtBPFX",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0008",
+      "gateway_payment_id": "pay_4hiCGItUBY3A4B",
+      "recon_entity_id": "pay_4hiCGItUBY3A4B",
+      "bank_utr": "UTIB01312434083790",
+      "settlement_id": "setl_j1BU0rWEoBSou3",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0009",
+      "gateway_payment_id": "pay_58H4KPfA1lquCu",
+      "recon_entity_id": "pay_58H4KPfA1lquCu",
+      "bank_utr": "UTIB28624194236977",
+      "settlement_id": "setl_2r6AZDUd7ne7cb",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0010",
+      "gateway_payment_id": "pay_PeOaAEAw3CjkGO",
+      "recon_entity_id": "pay_PeOaAEAw3CjkGO",
+      "bank_utr": "UTIB34343225855124",
+      "settlement_id": "setl_M5WCZKtp5rBUJP",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0011",
+      "gateway_payment_id": "pay_tU6QlTrKVL8Zsw",
+      "recon_entity_id": "pay_tU6QlTrKVL8Zsw",
+      "bank_utr": "UTIB92810456189025",
+      "settlement_id": "setl_sRhcds6NUgarDv",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0012",
+      "gateway_payment_id": "pay_jzQDcrr1eoqXKX",
+      "recon_entity_id": "pay_jzQDcrr1eoqXKX",
+      "bank_utr": "UTIB42545876026850",
+      "settlement_id": "setl_mhnjqidXKZ5BDs",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0013",
+      "gateway_payment_id": "pay_PyVcfphV1Za1Cd",
+      "recon_entity_id": "pay_PyVcfphV1Za1Cd",
+      "bank_utr": "UTIB30428196192744",
+      "settlement_id": "setl_GMEBdqir2EbNXS",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0014",
+      "gateway_payment_id": "pay_EuVx518ox1ztD4",
+      "recon_entity_id": "pay_EuVx518ox1ztD4",
+      "bank_utr": "UTIB18907263036596",
+      "settlement_id": "setl_x9XOj7h7ug0g4a",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0015",
+      "gateway_payment_id": "pay_ApzQlkLxQEKoNC",
+      "recon_entity_id": "pay_ApzQlkLxQEKoNC",
+      "bank_utr": "UTIB81332608308799",
+      "settlement_id": "setl_P3CrHe69s7QCs9",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0016",
+      "gateway_payment_id": "pay_uzmW2wFqk467s1",
+      "recon_entity_id": "pay_uzmW2wFqk467s1",
+      "bank_utr": "UTIB37236364693666",
+      "settlement_id": "setl_XDeUnPPy0Ifyqh",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0017",
+      "gateway_payment_id": "pay_M6rQnBow8w3Ndr",
+      "recon_entity_id": "pay_M6rQnBow8w3Ndr",
+      "bank_utr": "UTIB58277529957181",
+      "settlement_id": "setl_86ZfnN8du9WmZI",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0018",
+      "gateway_payment_id": "pay_dDyQE4efLerNHu",
+      "recon_entity_id": "pay_dDyQE4efLerNHu",
+      "bank_utr": "UTIB44046319080078",
+      "settlement_id": "setl_9GCLgR0OVSnBov",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0019",
+      "gateway_payment_id": "pay_VJY08YMNb5ZqlR",
+      "recon_entity_id": "pay_VJY08YMNb5ZqlR",
+      "bank_utr": "UTIB77500166264427",
+      "settlement_id": "setl_tva1JyiNbUnAvw",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0020",
+      "gateway_payment_id": "pay_iHoIPvyUBCetAz",
+      "recon_entity_id": "pay_iHoIPvyUBCetAz",
+      "bank_utr": "UTIB87270651739611",
+      "settlement_id": "setl_Nrz7k6CQwBgBye",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0021",
+      "gateway_payment_id": "pay_DNXKveCcwrN8fK",
+      "recon_entity_id": "pay_DNXKveCcwrN8fK",
+      "bank_utr": "UTIB90607956393760",
+      "settlement_id": "setl_xJ7Tc4JlLF7BYZ",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0022",
+      "gateway_payment_id": "pay_NuhR694fPFbt6v",
+      "recon_entity_id": "pay_NuhR694fPFbt6v",
+      "bank_utr": "UTIB11669703796772",
+      "settlement_id": "setl_Vl9jsWFHTGP2ML",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0023",
+      "gateway_payment_id": "pay_SFhfjBFZf4Y25z",
+      "recon_entity_id": "pay_SFhfjBFZf4Y25z",
+      "bank_utr": "UTIB74690219647212",
+      "settlement_id": "setl_yxxfntgSujc4DZ",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0024",
+      "gateway_payment_id": "pay_cxxUweoOgKUivu",
+      "recon_entity_id": "pay_cxxUweoOgKUivu",
+      "bank_utr": "UTIB33840628062744",
+      "settlement_id": "setl_NZQ8DliS6cmX2t",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0025",
+      "gateway_payment_id": "pay_kBBT4MANXdPzFU",
+      "recon_entity_id": "pay_kBBT4MANXdPzFU",
+      "bank_utr": "UTIB40133290159177",
+      "settlement_id": "setl_jb0QBhoOw6cjBw",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0026",
+      "gateway_payment_id": "pay_S5NXFhmiXbIwXI",
+      "recon_entity_id": "pay_S5NXFhmiXbIwXI",
+      "bank_utr": "UTIB87619490111373",
+      "settlement_id": "setl_Lft9SGVZe8NBQv",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0027",
+      "gateway_payment_id": "pay_6VqnJMb3HNspYz",
+      "recon_entity_id": "pay_6VqnJMb3HNspYz",
+      "bank_utr": "UTIB12141098499897",
+      "settlement_id": "setl_CQjzCvi1t9vyVF",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0028",
+      "gateway_payment_id": "pay_A2TVwyJmIeFVr9",
+      "recon_entity_id": "pay_A2TVwyJmIeFVr9",
+      "bank_utr": "UTIB44653619723857",
+      "settlement_id": "setl_Qh8yXv6UmFFciu",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0029",
+      "gateway_payment_id": "pay_SWxYpJRlBzzmFL",
+      "recon_entity_id": "pay_SWxYpJRlBzzmFL",
+      "bank_utr": "UTIB86824922997764",
+      "settlement_id": "setl_D0TRGI9Dx7CHHP",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0030",
+      "gateway_payment_id": "pay_qIqgTod4noguDQ",
+      "recon_entity_id": "pay_qIqgTod4noguDQ",
+      "bank_utr": "UTIB27809489087178",
+      "settlement_id": "setl_i78jO2DOUrrdVO",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0031",
+      "gateway_payment_id": "pay_TXJUk13ZFfPliu",
+      "recon_entity_id": "pay_TXJUk13ZFfPliu",
+      "bank_utr": "UTIB58731926211764",
+      "settlement_id": "setl_pqoU7sSaOQdhtz",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0032",
+      "gateway_payment_id": "pay_SE3BdizIIPtbpa",
+      "recon_entity_id": "pay_SE3BdizIIPtbpa",
+      "bank_utr": "UTIB93849309818193",
+      "settlement_id": "setl_neARHd39DrliNT",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0033",
+      "gateway_payment_id": "pay_gcLRdTyon1dFrY",
+      "recon_entity_id": "pay_gcLRdTyon1dFrY",
+      "bank_utr": "UTIB64499673413748",
+      "settlement_id": "setl_TtLPtsiOnsd624",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0034",
+      "gateway_payment_id": "pay_SID1u7a67h9DpL",
+      "recon_entity_id": "pay_SID1u7a67h9DpL",
+      "bank_utr": "UTIB93452129541338",
+      "settlement_id": "setl_m4IWxHwqFEg8D0",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0035",
+      "gateway_payment_id": "pay_Vz0oRaFxMPMDEa",
+      "recon_entity_id": "pay_Vz0oRaFxMPMDEa",
+      "bank_utr": "UTIB58233459268687",
+      "settlement_id": "setl_IaGr8bYPX4gfjl",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0036",
+      "gateway_payment_id": "pay_QrHOl0amiYY5sI",
+      "recon_entity_id": "pay_QrHOl0amiYY5sI",
+      "bank_utr": "UTIB66593674253153",
+      "settlement_id": "setl_J0PHxTXQeUvgoe",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0037",
+      "gateway_payment_id": "pay_vfLuxsyf348Jkx",
+      "recon_entity_id": "pay_vfLuxsyf348Jkx",
+      "bank_utr": "UTIB39368338891392",
+      "settlement_id": "setl_isEdAAEeppMKmg",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0038",
+      "gateway_payment_id": "pay_BsQYXzENpOSWe9",
+      "recon_entity_id": "pay_BsQYXzENpOSWe9",
+      "bank_utr": "UTIB36096379402555",
+      "settlement_id": "setl_DyF5QHXw3HNfVO",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0039",
+      "gateway_payment_id": "pay_DBRtsYh0OPk9pk",
+      "recon_entity_id": "pay_DBRtsYh0OPk9pk",
+      "bank_utr": "UTIB27801813428565",
+      "settlement_id": "setl_jI7ozlNAbMmKyR",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0040",
+      "gateway_payment_id": "pay_xlNQO9IEitBdwa",
+      "recon_entity_id": "pay_xlNQO9IEitBdwa",
+      "bank_utr": "UTIB51477511783807",
+      "settlement_id": "setl_iY7FEQz0EfbVsr",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0041",
+      "gateway_payment_id": "pay_AMWYXJHLk8sJ7F",
+      "recon_entity_id": "pay_AMWYXJHLk8sJ7F",
+      "bank_utr": "UTIB31663077476844",
+      "settlement_id": "setl_3YiUzdrORijtp0",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0042",
+      "gateway_payment_id": "pay_WCh1Ba7mQiOj5q",
+      "recon_entity_id": "pay_WCh1Ba7mQiOj5q",
+      "bank_utr": "UTIB26068941037138",
+      "settlement_id": "setl_Opx4kysRoORaDi",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0043",
+      "gateway_payment_id": "pay_TvAXpNpLSr6b02",
+      "recon_entity_id": "pay_TvAXpNpLSr6b02",
+      "bank_utr": "UTIB33384514905029",
+      "settlement_id": "setl_mLlyOWXoxoNe3a",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0044",
+      "gateway_payment_id": "pay_T0dfACLtTThRRk",
+      "recon_entity_id": "pay_T0dfACLtTThRRk",
+      "bank_utr": "UTIB75043453215725",
+      "settlement_id": "setl_7GWSkhWq2VbYqd",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0045",
+      "gateway_payment_id": "pay_lX87eCr0uIamIs",
+      "recon_entity_id": "pay_lX87eCr0uIamIs",
+      "bank_utr": "UTIB89068715240970",
+      "settlement_id": "setl_MCKEVm3Vpazov0",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0046",
+      "gateway_payment_id": "pay_tqemWKjkCzH7mt",
+      "recon_entity_id": "pay_tqemWKjkCzH7mt",
+      "bank_utr": "UTIB29044724810891",
+      "settlement_id": "setl_qhjQZRcZufpwFP",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0047",
+      "gateway_payment_id": "pay_bQknlr2cMpszId",
+      "recon_entity_id": "pay_bQknlr2cMpszId",
+      "bank_utr": "UTIB53132870957991",
+      "settlement_id": "setl_rim2GNXX9WwHE4",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0048",
+      "gateway_payment_id": "pay_Il92EtEfonGa4m",
+      "recon_entity_id": "pay_Il92EtEfonGa4m",
+      "bank_utr": "UTIB31311979619697",
+      "settlement_id": "setl_iS40ubK4W017x6",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0049",
+      "gateway_payment_id": "pay_Uo8k2fRN2Bqpep",
+      "recon_entity_id": "pay_Uo8k2fRN2Bqpep",
+      "bank_utr": "UTIB10823901375805",
+      "settlement_id": "setl_gaxT82ExHgD1OQ",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0050",
+      "gateway_payment_id": "pay_afZMDgmN8DhWD3",
+      "recon_entity_id": "pay_afZMDgmN8DhWD3",
+      "bank_utr": "UTIB68472035969522",
+      "settlement_id": "setl_qNyxxlcBqZIjRf",
+      "match_category": "clean_exact"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0051",
+      "gateway_payment_id": "pay_yurC2WMGAzjKV6",
+      "recon_entity_id": "pay_yurC2WMGAzjKV6",
+      "bank_utr": "UTIB60832798083246",
+      "settlement_id": "setl_5IgrHvzxELcriL",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0052",
+      "gateway_payment_id": "pay_zWGJk2mdcdwmwC",
+      "recon_entity_id": "pay_zWGJk2mdcdwmwC",
+      "bank_utr": "UTIB00872222658964",
+      "settlement_id": "setl_y5QpEB7DIvZqZf",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0053",
+      "gateway_payment_id": "pay_IKrQDururO7OlG",
+      "recon_entity_id": "pay_IKrQDururO7OlG",
+      "bank_utr": "UTIB98376649331652",
+      "settlement_id": "setl_od1YztibEs4zTK",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0054",
+      "gateway_payment_id": "pay_K6e3F1xsd0imzJ",
+      "recon_entity_id": "pay_K6e3F1xsd0imzJ",
+      "bank_utr": "UTIB47066493013038",
+      "settlement_id": "setl_4CtSWENkNaqVkV",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0055",
+      "gateway_payment_id": "pay_wl64zoTiTKkwOc",
+      "recon_entity_id": "pay_wl64zoTiTKkwOc",
+      "bank_utr": "UTIB66366261817111",
+      "settlement_id": "setl_2pHd9PObQzxHDj",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0056",
+      "gateway_payment_id": "pay_eS4NC8qdY20wPA",
+      "recon_entity_id": "pay_eS4NC8qdY20wPA",
+      "bank_utr": "UTIB44864481179819",
+      "settlement_id": "setl_h03aiOu37qTxvh",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0057",
+      "gateway_payment_id": "pay_GQMATDPNjZ3Ma5",
+      "recon_entity_id": "pay_GQMATDPNjZ3Ma5",
+      "bank_utr": "UTIB50439704058796",
+      "settlement_id": "setl_FDEkUturFIxYeB",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0058",
+      "gateway_payment_id": "pay_7sGRckiSSgLl5y",
+      "recon_entity_id": "pay_7sGRckiSSgLl5y",
+      "bank_utr": "UTIB50984591571368",
+      "settlement_id": "setl_CWSgz5ZKVBO7iE",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0059",
+      "gateway_payment_id": "pay_SQ5iS8lHNSVIK6",
+      "recon_entity_id": "pay_SQ5iS8lHNSVIK6",
+      "bank_utr": "UTIB61072534665263",
+      "settlement_id": "setl_SP3H2AagxddqW8",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0060",
+      "gateway_payment_id": "pay_TmSlB8e7Thcrqj",
+      "recon_entity_id": "pay_TmSlB8e7Thcrqj",
+      "bank_utr": "UTIB75957154386329",
+      "settlement_id": "setl_0aC6c5LVM0sWIe",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0061",
+      "gateway_payment_id": "pay_Bc3lF6k7HaePV1",
+      "recon_entity_id": "pay_Bc3lF6k7HaePV1",
+      "bank_utr": "UTIB75522364065667",
+      "settlement_id": "setl_AgHR8WO6UjCufd",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0062",
+      "gateway_payment_id": "pay_P4XTx6IIhaKH6s",
+      "recon_entity_id": "pay_P4XTx6IIhaKH6s",
+      "bank_utr": "UTIB99452007431616",
+      "settlement_id": "setl_U4vzOFjnZmlX00",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0063",
+      "gateway_payment_id": "pay_2CwsIkL01iHq2e",
+      "recon_entity_id": "pay_2CwsIkL01iHq2e",
+      "bank_utr": "UTIB27724535688615",
+      "settlement_id": "setl_ebFbKzK4IH9DWw",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0064",
+      "gateway_payment_id": "pay_2cOg8NqTJJxxK3",
+      "recon_entity_id": "pay_2cOg8NqTJJxxK3",
+      "bank_utr": "UTIB21168643164564",
+      "settlement_id": "setl_ep8nzYvX3a2BoF",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0065",
+      "gateway_payment_id": "pay_LDDnziKVMFkQ5K",
+      "recon_entity_id": "pay_LDDnziKVMFkQ5K",
+      "bank_utr": "UTIB70695096448649",
+      "settlement_id": "setl_exibG4QZLl3L2G",
+      "match_category": "fee_adjusted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0066",
+      "gateway_payment_id": "pay_GxmXzgAKqHJL9y",
+      "recon_entity_id": "pay_GxmXzgAKqHJL9y",
+      "bank_utr": "UTIB79157866036884",
+      "settlement_id": "setl_mIIlID9JWyi1ho",
+      "match_category": "date_shifted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0067",
+      "gateway_payment_id": "pay_FRMPwO8fryPzma",
+      "recon_entity_id": "pay_FRMPwO8fryPzma",
+      "bank_utr": "UTIB55531525724342",
+      "settlement_id": "setl_R4ITIKvYo7Czak",
+      "match_category": "date_shifted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0068",
+      "gateway_payment_id": "pay_Dv3q6Q4EmT2mmp",
+      "recon_entity_id": "pay_Dv3q6Q4EmT2mmp",
+      "bank_utr": "UTIB88499225074553",
+      "settlement_id": "setl_Mjg5PPMVHcDME9",
+      "match_category": "date_shifted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0069",
+      "gateway_payment_id": "pay_Rx0rliJogqoAxj",
+      "recon_entity_id": "pay_Rx0rliJogqoAxj",
+      "bank_utr": "UTIB60846433592018",
+      "settlement_id": "setl_7jXkE90GSWsIJy",
+      "match_category": "date_shifted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0070",
+      "gateway_payment_id": "pay_vtOSLy3W6UGBk0",
+      "recon_entity_id": "pay_vtOSLy3W6UGBk0",
+      "bank_utr": "UTIB16093274151039",
+      "settlement_id": "setl_hopUUnyf6DdVG9",
+      "match_category": "date_shifted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0071",
+      "gateway_payment_id": "pay_zjaGVirHQEUsVX",
+      "recon_entity_id": "pay_zjaGVirHQEUsVX",
+      "bank_utr": "UTIB76626521011447",
+      "settlement_id": "setl_LXHl2BpSOZneMG",
+      "match_category": "date_shifted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0072",
+      "gateway_payment_id": "pay_u07dWeDl0YZhVp",
+      "recon_entity_id": "pay_u07dWeDl0YZhVp",
+      "bank_utr": "UTIB95261882163121",
+      "settlement_id": "setl_VBTcCVG8DQtuNc",
+      "match_category": "date_shifted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0073",
+      "gateway_payment_id": "pay_WUXBlQwi3EBsRl",
+      "recon_entity_id": "pay_WUXBlQwi3EBsRl",
+      "bank_utr": "UTIB31087276535456",
+      "settlement_id": "setl_lvTrZ4IejsqwaN",
+      "match_category": "date_shifted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0074",
+      "gateway_payment_id": "pay_Sa5O5ZDNwU3YXd",
+      "recon_entity_id": "pay_Sa5O5ZDNwU3YXd",
+      "bank_utr": "UTIB55775674175565",
+      "settlement_id": "setl_MGTZenGgoxlOJ6",
+      "match_category": "date_shifted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0075",
+      "gateway_payment_id": "pay_8KG9ssn1bYQrII",
+      "recon_entity_id": "pay_8KG9ssn1bYQrII",
+      "bank_utr": "UTIB71865953750073",
+      "settlement_id": "setl_5jcwiwKoYfy4TS",
+      "match_category": "date_shifted"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0076",
+      "gateway_payment_id": "pay_FnryifJdyfFVii",
+      "recon_entity_id": "pay_FnryifJdyfFVii",
+      "bank_utr": "UTIB33503969410813",
+      "settlement_id": "setl_IEOmMTpeWu5fPA",
+      "match_category": "description_garbled"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0077",
+      "gateway_payment_id": "pay_RPx4GpdmRqC6eO",
+      "recon_entity_id": "pay_RPx4GpdmRqC6eO",
+      "bank_utr": "UTIB19570934706339",
+      "settlement_id": "setl_P4wgs2x8FS4ELf",
+      "match_category": "description_garbled"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0078",
+      "gateway_payment_id": "pay_j84uHmiHX1tRGi",
+      "recon_entity_id": "pay_j84uHmiHX1tRGi",
+      "bank_utr": "UTIB44498927117625",
+      "settlement_id": "setl_98i54tI6ht2TV2",
+      "match_category": "description_garbled"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0079",
+      "gateway_payment_id": "pay_U9Ue591EuCpzcT",
+      "recon_entity_id": "pay_U9Ue591EuCpzcT",
+      "bank_utr": "UTIB37556023384460",
+      "settlement_id": "setl_xtLUKG2WGBZc9G",
+      "match_category": "description_garbled"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0080",
+      "gateway_payment_id": "pay_Q4XShhBwGxXF6x",
+      "recon_entity_id": "pay_Q4XShhBwGxXF6x",
+      "bank_utr": "UTIB11262485082544",
+      "settlement_id": "setl_xV4JOj1lSAtVBM",
+      "match_category": "description_garbled"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0081",
+      "gateway_payment_id": "pay_krORJI7UwcVu3Y",
+      "recon_entity_id": "pay_krORJI7UwcVu3Y",
+      "bank_utr": "UTIB07677482569647",
+      "settlement_id": "setl_V0eDh1uznmdJ8G",
+      "match_category": "description_garbled"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0082",
+      "gateway_payment_id": "pay_QpesIVhuyJ7ZmZ",
+      "recon_entity_id": "pay_QpesIVhuyJ7ZmZ",
+      "bank_utr": "UTIB56505397018335",
+      "settlement_id": "setl_5DDcijC13CY5dG",
+      "match_category": "description_garbled"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0083",
+      "gateway_payment_id": "pay_4BbDFl5TGWi2Y6",
+      "recon_entity_id": "pay_4BbDFl5TGWi2Y6",
+      "bank_utr": "UTIB63538312341120",
+      "settlement_id": "setl_PiSCSGa5QKfCcG",
+      "match_category": "description_garbled"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0084",
+      "gateway_payment_id": "pay_CbDvCkVLhgYXuO",
+      "recon_entity_id": "pay_CbDvCkVLhgYXuO",
+      "bank_utr": "UTIB74189446742286",
+      "settlement_id": "setl_dAlKKZRMtYSPH8",
+      "match_category": "partial_batch"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0085",
+      "gateway_payment_id": "pay_34NajjGyJmQtJ4",
+      "recon_entity_id": "pay_34NajjGyJmQtJ4",
+      "bank_utr": "UTIB74189446742286",
+      "settlement_id": "setl_dAlKKZRMtYSPH8",
+      "match_category": "partial_batch"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0086",
+      "gateway_payment_id": "pay_Oi2O8iiX13R5MC",
+      "recon_entity_id": "pay_Oi2O8iiX13R5MC",
+      "bank_utr": "UTIB74189446742286",
+      "settlement_id": "setl_dAlKKZRMtYSPH8",
+      "match_category": "partial_batch"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0087",
+      "gateway_payment_id": "pay_rpTL4TOwkWolGc",
+      "recon_entity_id": "pay_rpTL4TOwkWolGc",
+      "bank_utr": "UTIB09775041098620",
+      "settlement_id": "setl_NXtdvWDFDTA7Xr",
+      "match_category": "partial_batch"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0088",
+      "gateway_payment_id": "pay_7A41uqgOyVUTKm",
+      "recon_entity_id": "pay_7A41uqgOyVUTKm",
+      "bank_utr": "UTIB09775041098620",
+      "settlement_id": "setl_NXtdvWDFDTA7Xr",
+      "match_category": "partial_batch"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0089",
+      "gateway_payment_id": "pay_WbEOacyjuyaRVD",
+      "recon_entity_id": "pay_WbEOacyjuyaRVD",
+      "bank_utr": "UTIB92449614172697",
+      "settlement_id": "setl_6N5rA4VukeWxud",
+      "match_category": "partial_batch"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0090",
+      "gateway_payment_id": "pay_SKEdHtHZB9cdWc",
+      "recon_entity_id": "pay_SKEdHtHZB9cdWc",
+      "bank_utr": "UTIB92449614172697",
+      "settlement_id": "setl_6N5rA4VukeWxud",
+      "match_category": "partial_batch"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0091",
+      "gateway_payment_id": "pay_u8JiZXVKuhizRI",
+      "recon_entity_id": "rfnd_Ej5dwmpM3CgdHj",
+      "bank_utr": "UTIB48762654960149",
+      "settlement_id": "setl_B5cg0LWaEalfO2",
+      "match_category": "refund"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0092",
+      "gateway_payment_id": "pay_h3SKumPuWugT1x",
+      "recon_entity_id": "rfnd_zc9TFAyYRgEfUQ",
+      "bank_utr": "UTIB60184138676619",
+      "settlement_id": "setl_nDE3i5CyiSN8mh",
+      "match_category": "refund"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0093",
+      "gateway_payment_id": "pay_wo9aPkCJK8CiRl",
+      "recon_entity_id": "rfnd_CFZDGZ3CwPQ82l",
+      "bank_utr": "UTIB66395930340367",
+      "settlement_id": "setl_2MRaMxQGsURLJm",
+      "match_category": "refund"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0094",
+      "gateway_payment_id": "pay_yl7ekgjjm7bzQ5",
+      "recon_entity_id": "rfnd_P8jB8Hhb5V65j8",
+      "bank_utr": "UTIB65545837232812",
+      "settlement_id": "setl_DATblbXZGuJOWE",
+      "match_category": "refund"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0095",
+      "gateway_payment_id": "pay_Os38U9PXT5ugDc",
+      "recon_entity_id": "rfnd_is9Gu5KxaNqkCJ",
+      "bank_utr": "UTIB86993465063743",
+      "settlement_id": "setl_QhbMnwuLmGWVmf",
+      "match_category": "refund"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0096",
+      "gateway_payment_id": "pay_ZrEZsKETnXjsNN",
+      "recon_entity_id": "rfnd_fJZaGxEv4gjnl3",
+      "bank_utr": "UTIB26983702514630",
+      "settlement_id": "setl_hPrl4NbVE8LwDB",
+      "match_category": "refund"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0097",
+      "gateway_payment_id": "pay_0SRXz4hibvQiB9",
+      "recon_entity_id": "rfnd_GS7kUaS550DRlP",
+      "bank_utr": "UTIB10441065490300",
+      "settlement_id": "setl_G8ksUhhRQtn8AV",
+      "match_category": "refund"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0098",
+      "gateway_payment_id": "pay_8AFzVtCGEwrSfE",
+      "recon_entity_id": "rfnd_9FjChEo6bTZEbl",
+      "bank_utr": "UTIB06635613697813",
+      "settlement_id": "setl_xCTQ0oz9A13X6w",
+      "match_category": "refund"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0099",
+      "gateway_payment_id": "pay_jMfeUVXmPEqv1H",
+      "recon_entity_id": "rfnd_OK4esubuC1J3qR",
+      "bank_utr": "UTIB17416665485349",
+      "settlement_id": "setl_7bA4xtxCcI1sRE",
+      "match_category": "refund"
+    },
+    {
+      "oms_order_ref": "ORD-2024-0100",
+      "gateway_payment_id": "pay_xyJYgPuFVvMwBE",
+      "recon_entity_id": "rfnd_GwjjQsAtZdmzZO",
+      "bank_utr": "UTIB08427638452464",
+      "settlement_id": "setl_0W0Hrc9yoUf0fu",
+      "match_category": "refund"
+    }
+  ],
+  "exceptions": [
+    {
+      "source": "multi",
+      "record_id": "pay_oojbXtE9A4mqbW",
+      "exception_category": "missing_bank_entry",
+      "description": "Generated exception of type missing_bank_entry"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_DprWiDwtO4cTXd",
+      "exception_category": "missing_bank_entry",
+      "description": "Generated exception of type missing_bank_entry"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_iyMtfjG8ZV0QXt",
+      "exception_category": "missing_bank_entry",
+      "description": "Generated exception of type missing_bank_entry"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_zzjrqM4wQCaiuQ",
+      "exception_category": "missing_bank_entry",
+      "description": "Generated exception of type missing_bank_entry"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_t9Vj0OXdjocqRB",
+      "exception_category": "missing_bank_entry",
+      "description": "Generated exception of type missing_bank_entry"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_i1XrXUHLfpoVyb",
+      "exception_category": "duplicate_payment",
+      "description": "Generated exception of type duplicate_payment"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_2sKCPMq72llUL2",
+      "exception_category": "duplicate_payment",
+      "description": "Generated exception of type duplicate_payment"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_GAtd3zDE6vRbrl",
+      "exception_category": "duplicate_payment",
+      "description": "Generated exception of type duplicate_payment"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_L1gIFkhmwTRVE1",
+      "exception_category": "amount_discrepancy",
+      "description": "Generated exception of type amount_discrepancy"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_2StvZ3LjzN3MMB",
+      "exception_category": "amount_discrepancy",
+      "description": "Generated exception of type amount_discrepancy"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_PSGpuKZwgSZfd3",
+      "exception_category": "amount_discrepancy",
+      "description": "Generated exception of type amount_discrepancy"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_hv1zJJ3WDSLVFC",
+      "exception_category": "amount_discrepancy",
+      "description": "Generated exception of type amount_discrepancy"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_z1tphgkipftzkM",
+      "exception_category": "ghost_refund",
+      "description": "Generated exception of type ghost_refund"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_kHefRZS92nFX26",
+      "exception_category": "ghost_refund",
+      "description": "Generated exception of type ghost_refund"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_JEIOJQJeheqJoG",
+      "exception_category": "ghost_refund",
+      "description": "Generated exception of type ghost_refund"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_x3QWdXdLAgdd0y",
+      "exception_category": "dispute_adjustment",
+      "description": "Generated exception of type dispute_adjustment"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_1Amm4WvPR8LuJ7",
+      "exception_category": "dispute_adjustment",
+      "description": "Generated exception of type dispute_adjustment"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_oYO68922ei5Xlx",
+      "exception_category": "dispute_adjustment",
+      "description": "Generated exception of type dispute_adjustment"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_ifBvKCMACzXtxl",
+      "exception_category": "orphaned_record",
+      "description": "Generated exception of type orphaned_record"
+    },
+    {
+      "source": "multi",
+      "record_id": "pay_UaO961oSnoKIDY",
+      "exception_category": "orphaned_record",
+      "description": "Generated exception of type orphaned_record"
+    }
+  ]
+}

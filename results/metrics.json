@@ -1,0 +1,10 @@
+{
+  "batch_id": "batch_2a3fbbf102ab",
+  "total_records": 480,
+  "matches_made": 338,
+  "false_matches": 103,
+  "tier1_matched": 337,
+  "tier2_matched": 1,
+  "tier3_matched": 0,
+  "processing_time_ms": 7039
+}
