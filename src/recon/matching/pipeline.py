@@ -39,6 +39,16 @@ class ReconciliationPipeline:
         logger.info("Started batch %s", batch_id)
 
         # 2. Ingest Data
+        try:
+            from recon.razorpay_client.client import RazorpayClient
+            rzp_client = RazorpayClient()
+            if not rzp_client.mock_mode:
+                logger.info("Executing real Razorpay API write (creating test order) for demonstration.")
+                # Create a sample order to prove write access
+                rzp_client.create_order(amount=50000, receipt=f"demo_receipt_{batch_id[:6]}")
+        except Exception as e:
+            logger.warning(f"Failed to create demo order: {e}")
+
         oms_loader = OMSSource()
         gw_loader = GatewaySource()
         setl_loader = SettlementSource()

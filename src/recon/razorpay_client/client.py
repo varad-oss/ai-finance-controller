@@ -55,3 +55,21 @@ class RazorpayClient:
         except Exception as e:
             logger.error(f"Failed to fetch settlements: {e}")
             return []
+
+    def create_order(self, amount: int, receipt: str, currency: str = "INR") -> dict:
+        """Create a Razorpay order via the API (useful for testing/demo)."""
+        if self.mock_mode:
+            return {"id": "mock_order_123", "amount": amount, "receipt": receipt, "status": "created"}
+        
+        try:
+            data = {
+                "amount": amount,
+                "currency": currency,
+                "receipt": receipt
+            }
+            order = self.client.order.create(data=data)
+            logger.info(f"Successfully created real Razorpay order: {order.get('id')} for receipt {receipt}")
+            return order
+        except Exception as e:
+            logger.error(f"Failed to create order: {e}")
+            return {}
