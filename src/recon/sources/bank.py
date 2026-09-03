@@ -54,7 +54,7 @@ class BankSource(BaseSource):
                         
             record = NormalizedRecord(
                 source=RecordSource.BANK,
-                record_id=f"bank_{idx}",
+                record_id=utr if utr else f"bank_{idx}",
                 transaction_type=txn_type,
                 gross_amount=gross_amount,
                 net_amount=gross_amount,
