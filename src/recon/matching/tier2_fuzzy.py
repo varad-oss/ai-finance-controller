@@ -108,6 +108,8 @@ def match_oms_to_gateway_fuzzy(
             ))
             matched_gw_ids.add(best_match.record_id)
             matched_oms_ids.add(oms_rec.record_id)
+        elif best_match:
+            logger.debug(f"Tier 2 OMS↔Gateway Near Miss: oms {oms_rec.record_id} -> gw {best_match.record_id} (Score: {best_score:.2f})")
 
     unmatched_oms = [r for r in oms_records if r.record_id not in matched_oms_ids]
     unmatched_gw = [r for r in gateway_records if r.record_id not in matched_gw_ids]
@@ -177,6 +179,8 @@ def match_gateway_to_recon_fuzzy(
             ))
             matched_recon_ids.add(best_match.record_id)
             matched_gw_ids.add(gw_rec.record_id)
+        elif best_match:
+            logger.debug(f"Tier 2 Gateway↔Recon Near Miss: gw {gw_rec.record_id} -> recon {best_match.record_id} (Score: {best_score:.2f})")
 
     unmatched_gw = [r for r in gateway_records if r.record_id not in matched_gw_ids]
     unmatched_recon = [r for r in recon_records if r.record_id not in matched_recon_ids]
@@ -252,18 +256,27 @@ def match_recon_to_bank_fuzzy(
                 right_source=RecordSource.BANK,
                 right_record_id=best_match.record_id,
                 match_tier=2,
-                confidence=min(1.0, best_score),
+                confidence=best_score,
                 rules_applied=best_rules,
                 decision="matched",
-                explanation=f"Fuzzy matched with score {best_score:.2f}",
+                explanation=f"Fuzzy match (score {best_score:.2f}): {', '.join(best_rules)}",
             ))
             matched_bank_ids.add(best_match.record_id)
             matched_recon_ids.add(recon_rec.record_id)
+        elif best_match:
+            logger.debug(f"Tier 2 Recon↔Bank Near Miss: recon {recon_rec.record_id} -> bank {best_match.record_id} (Score: {best_score:.2f})")
 
-    unmatched_recon = [r for r in recon_records if r.record_id not in matched_recon_ids]
-    unmatched_bank = [r for r in bank_records if r.record_id not in matched_bank_ids]
+    unmatched_recon = [
+        r for r in recon_records if r.record_id not in matched_recon_ids
+    ]
+    unmatched_bank = [
+        r for r in bank_records if r.record_id not in matched_bank_ids
+    ]
 
-    logger.info("Recon↔Bank Tier 2: %d matched", len(matches))
+    logger.info(
+        "Recon↔Bank Tier 2: %d matched",
+        len(matches),
+    )
     return matches, unmatched_recon, unmatched_bank
 
 

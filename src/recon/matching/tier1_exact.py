@@ -173,29 +173,38 @@ def match_recon_to_bank(
     Returns:
         (matches, unmatched_recon, unmatched_bank)
     """
-    # Index bank records by UTR
-    bank_by_utr = _build_index(bank_records, lambda r: r.reference_ids.get("utr"))
-
     matches: list[MatchResult] = []
     matched_bank_ids: set[str] = set()
     unmatched_recon: list[NormalizedRecord] = []
 
-    for recon_record in recon_records:
-        utr = recon_record.reference_ids.get("utr")
-        if utr is None:
-            unmatched_recon.append(recon_record)
-            continue
+    # Index bank records by UTR
+    bank_by_utr = {}
+    for r in bank_records:
+        utr = r.reference_ids.get("utr")
+        if utr:
+            bank_by_utr[utr] = r
 
-        candidates = bank_by_utr.get(utr, [])
-        matched = False
-        for bank_record in candidates:
-            if bank_record.record_id in matched_bank_ids:
-                continue
-            # For individual recon→bank matching, we check the net amount
-            # (recon.net_amount should equal bank.gross_amount for this UTR)
-            # Note: bank records for settlements show the settlement-level amount,
-            # so this comparison works at the settlement grain.
-            if recon_record.net_amount == bank_record.gross_amount:
+    # Group recon records by UTR
+    recon_by_utr = {}
+    for r in recon_records:
+        utr = r.reference_ids.get("utr")
+        if utr:
+            recon_by_utr.setdefault(utr, []).append(r)
+        else:
+            unmatched_recon.append(r)
+
+    for utr, recon_group in recon_by_utr.items():
+        bank_record = bank_by_utr.get(utr)
+        if not bank_record or bank_record.record_id in matched_bank_ids:
+            unmatched_recon.extend(recon_group)
+            continue
+            
+        # Sum net amounts
+        total_recon_net = sum(r.net_amount for r in recon_group)
+        
+        if total_recon_net == bank_record.gross_amount:
+            # Match them all
+            for recon_record in recon_group:
                 matches.append(MatchResult(
                     left_source=RecordSource.RECON,
                     left_record_id=recon_record.record_id,
@@ -203,16 +212,13 @@ def match_recon_to_bank(
                     right_record_id=bank_record.record_id,
                     match_tier=1,
                     confidence=1.0,
-                    rules_applied=["exact_utr_match", "exact_amount_match"],
+                    rules_applied=["exact_utr_match", "exact_aggregated_amount_match"],
                     decision="matched",
-                    explanation=f"Exact match: UTR={utr}, amount={recon_record.net_amount}",
+                    explanation=f"Exact match (batch): UTR={utr}, aggregated_amount={total_recon_net}",
                 ))
-                matched_bank_ids.add(bank_record.record_id)
-                matched = True
-                break
-
-        if not matched:
-            unmatched_recon.append(recon_record)
+            matched_bank_ids.add(bank_record.record_id)
+        else:
+            unmatched_recon.extend(recon_group)
 
     unmatched_bank = [
         r for r in bank_records if r.record_id not in matched_bank_ids
