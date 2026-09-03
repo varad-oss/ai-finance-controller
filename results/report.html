@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Finance Controller - Reconciliation Report</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        h1, h2 { color: #1a56db; }
+        .summary-card { background: #f3f4f6; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; display: flex; gap: 2rem; }
+        .metric { display: flex; flex-direction: column; }
+        .metric-value { font-size: 2rem; font-weight: bold; color: #1a56db; }
+        .metric-label { font-size: 0.875rem; color: #6b7280; text-transform: uppercase; font-weight: 600; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+        th { background-color: #f9fafb; font-weight: 600; color: #374151; }
+        tr:hover { background-color: #f9fafb; }
+        .badge { display: inline-block; padding: 0.25rem 0.5rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+        .badge-error { background-color: #fee2e2; color: #991b1b; }
+        .badge-warning { background-color: #fef3c7; color: #92400e; }
+        .badge-success { background-color: #d1fae5; color: #065f46; }
+    </style>
+</head>
+<body>
+    <h1>AI Finance Controller - Reconciliation Report</h1>
+    
+    
+    
+    <div class="summary-card">
+        <div class="metric">
+            <span class="metric-value">480</span>
+            <span class="metric-label">Total Records</span>
+        </div>
+        <div class="metric">
+            <span class="metric-value" style="color: #059669;">345</span>
+            <span class="metric-label">Matched</span>
+        </div>
+        <div class="metric">
+            <span class="metric-value" style="color: #dc2626;">24</span>
+            <span class="metric-label">Exceptions (Review)</span>
+        </div>
+        <div class="metric">
+            <span class="metric-value" style="color: #4f46e5;">9763 ms</span>
+            <span class="metric-label">Processing Time</span>
+        </div>
+    </div>
+
+    <h2>Exception Report & AI Diagnosis</h2>
+    <p>These records could not be automatically reconciled and require human review. Where applicable, the AI has provided a diagnosis.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Source</th>
+                <th>Record ID</th>
+                <th>Diagnosis Category</th>
+                <th>Explanation</th>
+                <th>Confidence</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">pay_2StvZ3LjzN3MMB</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">pay_PSGpuKZwgSZfd3</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">pay_hv1zJJ3WDSLVFC</td>
+                <td><span class="badge badge-warning">missing_record</span></td>
+                <td>No matching settlement record was found for payment pay_hv1zJJ3WDSLVFC (order_h6lbWpR3BYLyc1). The candidates in the context have significantly different transaction amounts and reference details.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">pay_z1tphgkipftzkM</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">pay_kHefRZS92nFX26</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">pay_JEIOJQJeheqJoG</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">rfnd_Ej5dwmpM3CgdHj</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">rfnd_zc9TFAyYRgEfUQ</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">rfnd_CFZDGZ3CwPQ82l</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">rfnd_P8jB8Hhb5V65j8</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">rfnd_is9Gu5KxaNqkCJ</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">rfnd_fJZaGxEv4gjnl3</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">rfnd_GS7kUaS550DRlP</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">rfnd_9FjChEo6bTZEbl</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">rfnd_OK4esubuC1J3qR</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">rfnd_GwjjQsAtZdmzZO</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">rfnd_cY7MOkd5qpQ90n</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">rfnd_lYMYn87cERLa9N</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">rfnd_0pD7ZYGoeLBfBh</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">recon</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">pay_oojbXtE9A4mqbW</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">recon</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">pay_DprWiDwtO4cTXd</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">recon</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">pay_iyMtfjG8ZV0QXt</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">recon</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">pay_zzjrqM4wQCaiuQ</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">recon</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">pay_t9Vj0OXdjocqRB</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>Failed Tier 1 and Tier 2 matching.</td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <h2 style="margin-top: 3rem;">Tier Breakdown</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tier</th>
+                <th>Matches</th>
+                <th>Coverage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tier 1 (Deterministic)</td>
+                <td>344</td>
+                <td>71.7%</td>
+            </tr>
+            <tr>
+                <td>Tier 2 (Fuzzy Rules)</td>
+                <td>1</td>
+                <td>0.2%</td>
+            </tr>
+            <tr>
+                <td>Tier 3 (AI Investigation)</td>
+                <td>0</td>
+                <td>0.0%</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

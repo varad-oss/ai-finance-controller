@@ -34,7 +34,7 @@ class Settings(BaseSettings):
     tier3_confidence_threshold: float = 0.80
     tier2_amount_tolerance_percent: float = 2.0
     tier2_date_window_days: int = 3
-    tier3_max_llm_calls: int = 50
+    tier3_max_llm_calls: int = 5
 
     # --- Paths ---
     data_dir: Path = PROJECT_ROOT / "data" / "synthetic"

@@ -14,6 +14,7 @@ from rich.table import Table
 
 from recon.audit.db import AuditDB
 from recon.matching.pipeline import ReconciliationPipeline
+from recon.reporting.html_report import generate_html_report
 from recon.config import settings
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -157,3 +158,7 @@ if __name__ == "__main__":
     
     console.print(f"Pipeline finished. Batch ID: {batch_id}")
     evaluate(batch_id, db)
+    
+    generate_html_report(batch_id, db, output_path="results/report.html")
+    console.print("View the detailed HTML report at [bold cyan]results/report.html[/bold cyan]")
+
