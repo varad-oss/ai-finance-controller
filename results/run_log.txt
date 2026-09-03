@@ -1,0 +1,21 @@
+Running Reconciliation Pipeline...
+Pipeline finished. Batch ID: batch_96a5d2f3c19b
+
+=== Reconciliation Evaluation Results ===
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Metric                            ┃ Value ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ Total Records Ingested            │   480 │
+│ Tier 1 Exact Matches              │   344 │
+│ Tier 2 Fuzzy Matches              │     1 │
+│ Tier 3 AI Matches                 │     0 │
+│ Total Matches Made                │   345 │
+│ Verified Correct Matches          │   200 │
+│ False Matches                     │     0 │
+│ Unverified Matches                │   145 │
+│ Exceptions Flagged (Human Review) │    24 │
+│ Processing Time (ms)              │  5988 │
+└───────────────────────────────────┴───────┘
+
+Success! Results evaluated against ground truth.
