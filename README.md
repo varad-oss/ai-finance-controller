@@ -19,6 +19,7 @@ Against a 120-record synthetic ground truth batch (featuring deliberate edge cas
 * **Total Records Ingested**: 480 (across 4 sources)
 * **Tier 1 Exact Matches**: 337 matches
 * **Tier 2 Fuzzy Matches**: 1 match
+* **Tier 3 AI Matches**: 0 matches (Due to Gemini API rate limits on this run)
 * **Exceptions Flagged for Human Review**: 34 records
 * **Processing Time**: ~7.5 seconds
 * **False Matches**: 103 (Artifact of synthetic ground truth pairing logic)

@@ -5,6 +5,7 @@ from rich.console import Console
 from rich.table import Table
 
 from recon.audit.db import AuditDB
+from recon.config import settings
 
 logger = logging.getLogger(__name__)
 console = Console()
@@ -17,6 +18,9 @@ def generate_cli_report(batch_id: str, db: AuditDB):
         return
 
     console.print("\n[bold blue]=== Reconciliation Batch Report ===[/bold blue]\n")
+    
+    if not settings.llm_configured:
+        console.print("[bold red blink]WARNING: Tier 3 AI Investigation was SKIPPED because no LLM API key was configured.[/bold red blink]\n")
     
     t = Table(show_header=True, header_style="bold magenta")
     t.add_column("Metric")

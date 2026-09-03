@@ -27,7 +27,7 @@ class Settings(BaseSettings):
 
     # --- LLM (Tier 3 AI Investigation) ---
     gemini_api_key: str = ""
-    llm_model: str = "gemini-1.5-flash"
+    llm_model: str = "gemini-3.6-flash"
     
     # --- Matching Thresholds ---
     tier2_confidence_threshold: float = 0.75

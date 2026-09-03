@@ -35,6 +35,12 @@ TEMPLATE = """
 <body>
     <h1>AI Finance Controller - Reconciliation Report</h1>
     
+    {% if not llm_configured %}
+    <div style="background-color: #fee2e2; border: 1px solid #dc2626; color: #991b1b; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; font-weight: bold;">
+        WARNING: Tier 3 AI Investigation was SKIPPED because no LLM API key was configured. All exceptions defaulted to manual review.
+    </div>
+    {% endif %}
+    
     <div class="summary-card">
         <div class="metric">
             <span class="metric-value">{{ summary.total_records }}</span>
@@ -155,7 +161,8 @@ def generate_html_report(batch_id: str, db: AuditDB, output_path: str = "results
     
     html_content = template.render(
         summary=summary,
-        exceptions=exceptions
+        exceptions=exceptions,
+        llm_configured=settings.llm_configured
     )
     
     out_path = Path(output_path)
