@@ -1,86 +1,5 @@
 {
-  "false_matches": [
-    {
-      "left_id": "ORD-2024-0091",
-      "wrong_right_id": "pay_u8JiZXVKuhizRI",
-      "correct_right_ids": [
-        "rfnd_Ej5dwmpM3CgdHj"
-      ],
-      "tag": "wrong_match_pair"
-    },
-    {
-      "left_id": "ORD-2024-0092",
-      "wrong_right_id": "pay_h3SKumPuWugT1x",
-      "correct_right_ids": [
-        "rfnd_zc9TFAyYRgEfUQ"
-      ],
-      "tag": "wrong_match_pair"
-    },
-    {
-      "left_id": "ORD-2024-0093",
-      "wrong_right_id": "pay_wo9aPkCJK8CiRl",
-      "correct_right_ids": [
-        "rfnd_CFZDGZ3CwPQ82l"
-      ],
-      "tag": "wrong_match_pair"
-    },
-    {
-      "left_id": "ORD-2024-0094",
-      "wrong_right_id": "pay_yl7ekgjjm7bzQ5",
-      "correct_right_ids": [
-        "rfnd_P8jB8Hhb5V65j8"
-      ],
-      "tag": "wrong_match_pair"
-    },
-    {
-      "left_id": "ORD-2024-0095",
-      "wrong_right_id": "pay_Os38U9PXT5ugDc",
-      "correct_right_ids": [
-        "rfnd_is9Gu5KxaNqkCJ"
-      ],
-      "tag": "wrong_match_pair"
-    },
-    {
-      "left_id": "ORD-2024-0096",
-      "wrong_right_id": "pay_ZrEZsKETnXjsNN",
-      "correct_right_ids": [
-        "rfnd_fJZaGxEv4gjnl3"
-      ],
-      "tag": "wrong_match_pair"
-    },
-    {
-      "left_id": "ORD-2024-0097",
-      "wrong_right_id": "pay_0SRXz4hibvQiB9",
-      "correct_right_ids": [
-        "rfnd_GS7kUaS550DRlP"
-      ],
-      "tag": "wrong_match_pair"
-    },
-    {
-      "left_id": "ORD-2024-0098",
-      "wrong_right_id": "pay_8AFzVtCGEwrSfE",
-      "correct_right_ids": [
-        "rfnd_9FjChEo6bTZEbl"
-      ],
-      "tag": "wrong_match_pair"
-    },
-    {
-      "left_id": "ORD-2024-0099",
-      "wrong_right_id": "pay_jMfeUVXmPEqv1H",
-      "correct_right_ids": [
-        "rfnd_OK4esubuC1J3qR"
-      ],
-      "tag": "wrong_match_pair"
-    },
-    {
-      "left_id": "ORD-2024-0100",
-      "wrong_right_id": "pay_xyJYgPuFVvMwBE",
-      "correct_right_ids": [
-        "rfnd_GwjjQsAtZdmzZO"
-      ],
-      "tag": "wrong_match_pair"
-    }
-  ],
+  "false_matches": [],
   "exception_leakage": [
     {
       "leaked_exception_id": "pay_oojbXtE9A4mqbW",
@@ -415,6 +334,14 @@
       "exception_category": "amount_discrepancy",
       "wrongly_matched_to": "ORD-2024-0112",
       "match_sources": "oms->gateway",
+      "match_tier": 2,
+      "tag": "matched_a_genuine_exception"
+    },
+    {
+      "leaked_exception_id": "pay_zzjrqM4wQCaiuQ",
+      "exception_category": "missing_bank_entry",
+      "wrongly_matched_to": "pay_u8JiZXVKuhizRI",
+      "match_sources": "gateway->recon",
       "match_tier": 2,
       "tag": "matched_a_genuine_exception"
     }
