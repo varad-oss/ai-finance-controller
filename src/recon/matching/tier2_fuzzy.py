@@ -62,6 +62,7 @@ def match_oms_to_gateway_fuzzy(
         best_score = 0.0
         best_rules = []
         best_explanation = ""
+        scored_candidates = []
 
         # Find the best fuzzy match
         for gw_rec in gateway_records:
@@ -88,13 +89,22 @@ def match_oms_to_gateway_fuzzy(
                 score += 0.25
                 rules.append("receipt_substring_match")
 
+            if score > 0:
+                scored_candidates.append((score, rules, gw_rec))
+
             if score > best_score:
                 best_score = score
                 best_match = gw_rec
                 best_rules = rules
                 best_explanation = f"Fuzzy matched with score {score:.2f} using rules: {rules}"
 
-        if best_match and best_score >= settings.tier2_confidence_threshold:
+        # Filter out cases where there are multiple top-scoring candidates (ambiguous)
+        top_score_candidates = [
+            (score, rules, rec) for score, rules, rec in scored_candidates
+            if score == best_score
+        ]
+        
+        if best_match and best_score >= settings.tier2_confidence_threshold and len(top_score_candidates) == 1:
             matches.append(MatchResult(
                 left_source=RecordSource.OMS,
                 left_record_id=oms_rec.record_id,

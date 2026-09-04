@@ -66,10 +66,17 @@ def match_oms_to_gateway(
 
         candidates = gateway_by_receipt.get(receipt, [])
         matched = False
-        for gw_record in candidates:
-            if gw_record.record_id in matched_gateway_ids:
-                continue
-            if oms_record.gross_amount == gw_record.gross_amount and oms_record.transaction_type == gw_record.transaction_type:
+        # Filter candidates to only those matching in amount and type
+        valid_candidates = [
+            c for c in candidates 
+            if c.gross_amount == oms_record.gross_amount 
+            and c.transaction_type == oms_record.transaction_type
+        ]
+        
+        # If there are multiple identical valid candidates, it's ambiguous (e.g. duplicate payment)
+        if len(valid_candidates) == 1:
+            gw_record = valid_candidates[0]
+            if gw_record.record_id not in matched_gateway_ids:
                 matches.append(MatchResult(
                     left_source=RecordSource.OMS,
                     left_record_id=oms_record.record_id,
@@ -83,7 +90,6 @@ def match_oms_to_gateway(
                 ))
                 matched_gateway_ids.add(gw_record.record_id)
                 matched = True
-                break
 
         if not matched:
             unmatched_oms.append(oms_record)
