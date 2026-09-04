@@ -69,7 +69,7 @@ TEMPLATE = """
                 <th>Source</th>
                 <th>Record ID</th>
                 <th>Diagnosis Category</th>
-                <th>Explanation</th>
+                <th>Explanation & AI Reasoning</th>
                 <th>Confidence</th>
             </tr>
         </thead>
@@ -79,7 +79,15 @@ TEMPLATE = """
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">{{ exc.record_source }}</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">{{ exc.record_id }}</td>
                 <td><span class="badge badge-warning">{{ exc.category }}</span></td>
-                <td>{{ exc.explanation }}</td>
+                <td>
+                    {{ exc.explanation }}
+                    {% if exc.ai_response %}
+                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
+                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{{ exc.ai_response }}</pre>
+                    </details>
+                    {% endif %}
+                </td>
                 <td>
                     {% if exc.confidence > 0 %}
                     {{ "%.2f"|format(exc.confidence) }}
@@ -139,10 +147,12 @@ def generate_html_report(batch_id: str, db: AuditDB, output_path: str = "results
     exceptions = []
     for hr in human_review:
         ai_data = db.get_ai_investigation(hr["id"])
+        ai_resp = None
         if ai_data:
             cat = ai_data['diagnosis_category']
             expl = ai_data['explanation']
             conf = hr["confidence"] or 0.0
+            ai_resp = ai_data.get('response_text')
         else:
             cat = "Unreconcilable"
             expl = hr["explanation"] or "Failed matching rules."
@@ -153,7 +163,8 @@ def generate_html_report(batch_id: str, db: AuditDB, output_path: str = "results
             "record_id": hr["record_id"],
             "category": cat,
             "explanation": expl,
-            "confidence": conf
+            "confidence": conf,
+            "ai_response": ai_resp
         })
 
     env = Environment(loader=BaseLoader())
