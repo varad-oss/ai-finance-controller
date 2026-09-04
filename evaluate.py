@@ -1,8 +1,8 @@
 """Evaluation harness.
 
 Runs the reconciliation pipeline and evaluates the output against
-the ground truth synthetic data. Computes honest metrics (match rate,
-false match rate, AI marginal value).
+the ground truth synthetic data. Computes metrics (match rate,
+false match rate, exception leakage).
 """
 
 import json
@@ -34,7 +34,6 @@ def load_ground_truth() -> dict:
 def build_gt_lookup(gt: dict) -> dict:
     """Builds a lookup of valid match pairs from ground truth."""
     # Maps record_id -> set of acceptable match IDs
-    # Since our pipeline matches pairs across sources (e.g., OMS->GW, GW->Recon, Recon->Bank)
     lookup = {}
     
     for row in gt.get("matches", []):
@@ -65,27 +64,63 @@ def build_gt_lookup(gt: dict) -> dict:
     return lookup
 
 
+def build_exception_id_set(gt: dict) -> dict:
+    """Builds a set of IDs from ground truth exceptions that must never match.
+    
+    Returns a dict mapping record_id -> exception_category.
+    """
+    exception_ids = {}
+    for exc in gt.get("exceptions", []):
+        rec_id = exc.get("record_id")
+        cat = exc.get("exception_category", "unknown")
+        if rec_id:
+            exception_ids[rec_id] = cat
+    return exception_ids
+
+
 def evaluate(batch_id: str, db: AuditDB):
     gt = load_ground_truth()
     gt_matches_lookup = build_gt_lookup(gt)
+    exception_ids = build_exception_id_set(gt)
 
     decisions = db.get_decisions_for_batch(batch_id)
     
     # Analyze decisions
-    total_decisions = len(decisions)
     matches_made = [d for d in decisions if d["decision"] == "matched"]
     exceptions_flagged = [d for d in decisions if d["decision"] != "matched"]
 
     correct_matches = 0
     false_matches = 0
     unverified = 0
+    exception_leakage = 0
     
-    exception_report = []
+    false_match_report = []
+    exception_leakage_report = []
 
     for m in matches_made:
         left_id = m["record_id"]
         right_id = m["matched_record_id"]
         
+        # Check exception leakage first: did we match an ID that ground truth
+        # says should never match?
+        leaked_left = left_id in exception_ids
+        leaked_right = right_id in exception_ids if right_id else False
+        
+        if leaked_left or leaked_right:
+            exception_leakage += 1
+            leaked_id = left_id if leaked_left else right_id
+            other_id = right_id if leaked_left else left_id
+            exception_leakage_report.append({
+                "leaked_exception_id": leaked_id,
+                "exception_category": exception_ids[leaked_id],
+                "wrongly_matched_to": other_id,
+                "match_sources": f"{m['record_source']}->{m['matched_source']}",
+                "match_tier": m["match_tier"],
+                "tag": "matched_a_genuine_exception",
+            })
+            continue  # Don't double-count as correct/false/unverified
+        
+        # Normal verification against ground truth match pairs
         acceptable_matches = gt_matches_lookup.get(left_id, set())
         
         if left_id in gt_matches_lookup:
@@ -93,10 +128,11 @@ def evaluate(batch_id: str, db: AuditDB):
                 correct_matches += 1
             else:
                 false_matches += 1
-                exception_report.append({
+                false_match_report.append({
                     "left_id": left_id,
                     "wrong_right_id": right_id,
-                    "correct_right_ids": list(acceptable_matches)
+                    "correct_right_ids": list(acceptable_matches),
+                    "tag": "wrong_match_pair",
                 })
         else:
             unverified += 1
@@ -107,7 +143,7 @@ def evaluate(batch_id: str, db: AuditDB):
     console.print("\n[bold blue]=== Reconciliation Evaluation Results ===[/bold blue]\n")
     
     if not settings.llm_configured:
-        console.print("[bold red blink]WARNING: Tier 3 AI Investigation was SKIPPED because no LLM API key was configured.[/bold red blink]\n")
+        console.print("[bold red]NOTE: Tier 3 AI Investigation was SKIPPED — no Gemini API key was configured.[/bold red]\n")
     
     t = Table(show_header=True, header_style="bold magenta")
     t.add_column("Metric")
@@ -119,31 +155,47 @@ def evaluate(batch_id: str, db: AuditDB):
     t.add_row("Tier 3 AI Matches", str(summary["tier3_matched"]))
     t.add_row("Total Matches Made", str(len(matches_made)))
     t.add_row("Verified Correct Matches", str(correct_matches))
-    t.add_row("False Matches", f"[red]{false_matches}[/red]" if false_matches > 0 else "[green]0[/green]")
+    t.add_row("False Matches (wrong pair)", f"[red]{false_matches}[/red]" if false_matches > 0 else str(false_matches))
+    t.add_row(f"Exception Leakage (of {len(exception_ids)} GT exceptions)", 
+              f"[red]{exception_leakage}[/red]" if exception_leakage > 0 else str(exception_leakage))
     t.add_row("Unverified Matches", str(unverified))
     t.add_row("Exceptions Flagged (Human Review)", str(len(exceptions_flagged)))
     t.add_row("Processing Time (ms)", str(summary["processing_time_ms"]))
 
     console.print(t)
     
-    console.print("\n[bold green]Success![/bold green] Results evaluated against ground truth.")
+    if exception_leakage > 0:
+        console.print(f"\n[bold red]WARNING: {exception_leakage} ground-truth exception records leaked into matches.[/bold red]")
+    
+    console.print("\nResults evaluated against ground truth.")
     
     # Save results
     settings.results_dir.mkdir(exist_ok=True)
+    
+    metrics = {
+        "batch_id": batch_id,
+        "total_records": summary["total_records"],
+        "matches_made": len(matches_made),
+        "correct_matches": correct_matches,
+        "false_matches": false_matches,
+        "exception_leakage": exception_leakage,
+        "exception_leakage_out_of": len(exception_ids),
+        "unverified_matches": unverified,
+        "tier1_matched": summary["tier1_matched"],
+        "tier2_matched": summary["tier2_matched"],
+        "tier3_matched": summary["tier3_matched"],
+        "processing_time_ms": summary["processing_time_ms"],
+    }
+    
     with open(settings.results_dir / "metrics.json", "w") as f:
-        json.dump({
-            "batch_id": batch_id,
-            "total_records": summary["total_records"],
-            "matches_made": len(matches_made),
-            "correct_matches": correct_matches,
-            "false_matches": false_matches,
-            "unverified_matches": unverified,
-            "tier1_matched": summary["tier1_matched"],
-            "tier2_matched": summary["tier2_matched"],
-            "tier3_matched": summary["tier3_matched"],
-            "processing_time_ms": summary["processing_time_ms"],
-        }, f, indent=2)
+        json.dump(metrics, f, indent=2)
 
+    # exception_report.json contains both wrong-pair false matches
+    # and exception-leakage records
+    exception_report = {
+        "false_matches": false_match_report,
+        "exception_leakage": exception_leakage_report,
+    }
     with open(settings.results_dir / "exception_report.json", "w") as f:
         json.dump(exception_report, f, indent=2)
 
