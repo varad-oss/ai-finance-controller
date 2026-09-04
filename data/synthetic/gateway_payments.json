@@ -2418,5 +2418,45 @@
       "auth_code": "000"
     },
     "created_at": 1718881595
+  },
+  {
+    "id": "pay_ifBvKCMACzXtxl",
+    "entity": "payment",
+    "amount": 1688000,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_WzzJODFVjyoUDF",
+    "receipt": "ORD-2024-0119",
+    "method": "wallet",
+    "fee": 33760,
+    "tax": 6076,
+    "email": "test@example.com",
+    "contact": "9999999999",
+    "description": "",
+    "acquirer_data": {
+      "rrn": "123456",
+      "auth_code": "000"
+    },
+    "created_at": 1720215309
+  },
+  {
+    "id": "pay_vf0A6zB0bi2sTE",
+    "entity": "payment",
+    "amount": 4755000,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_kPlZLbm4xmsGCw",
+    "receipt": "ORD-2024-0120",
+    "method": "card",
+    "fee": 95100,
+    "tax": 17118,
+    "email": "test@example.com",
+    "contact": "9999999999",
+    "description": "",
+    "acquirer_data": {
+      "rrn": "123456",
+      "auth_code": "000"
+    },
+    "created_at": 1721733476
   }
 ]

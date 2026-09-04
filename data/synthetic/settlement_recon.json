@@ -1886,37 +1886,5 @@
     "created_at": 1718881595,
     "on_hold": false,
     "settled": true
-  },
-  {
-    "entity_id": "pay_ifBvKCMACzXtxl",
-    "type": "payment",
-    "amount": 1688000,
-    "currency": "INR",
-    "fee": 33760,
-    "tax": 6076,
-    "credit": 1648164,
-    "debit": 0,
-    "settlement_id": "setl_oOwf0FNW5gecmm",
-    "utr": "UTIB33862799779028",
-    "settled_at": 1720301709,
-    "created_at": 1720215309,
-    "on_hold": false,
-    "settled": true
-  },
-  {
-    "entity_id": "pay_UaO961oSnoKIDY",
-    "type": "payment",
-    "amount": 2666400,
-    "currency": "INR",
-    "fee": 53328,
-    "tax": 9599,
-    "credit": 2603473,
-    "debit": 0,
-    "settlement_id": "setl_vf0A6zB0bi2sTE",
-    "utr": "UTIB63247762550199",
-    "settled_at": 1719502615,
-    "created_at": 1719416215,
-    "on_hold": false,
-    "settled": true
   }
 ]
