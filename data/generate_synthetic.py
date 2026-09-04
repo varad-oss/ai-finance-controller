@@ -201,7 +201,7 @@ def generate_data():
             if cat == "description_garbled":
                 bank_desc = f"IMPS/RZP/SETL/{utr[4:10]}..." # Garbled UTR
 
-            oms_status = "completed"
+            oms_status = "refunded" if cat == "refund" else "completed"
             gw_status = "captured"
             recon_credit = credit
             recon_debit = 0
@@ -236,24 +236,23 @@ def generate_data():
                     "notes": ""
                 })
                 
-            if cat != "orphaned_record":
-                gateway_payments.append({
-                    "id": pay_id,
-                    "entity": "payment",
-                    "amount": amount,
-                    "currency": "INR",
-                    "status": gw_status,
-                    "order_id": random_id("order_"),
-                    "receipt": ord_ref if cat != "ghost_refund" else "",
-                    "method": random.choice(PAYMENT_METHODS),
-                    "fee": fee,
-                    "tax": tax,
-                    "email": "test@example.com",
-                    "contact": "9999999999",
-                    "description": "",
-                    "acquirer_data": {"rrn": "123456", "auth_code": "000"},
-                    "created_at": created_ts
-                })
+            gateway_payments.append({
+                "id": pay_id,
+                "entity": "payment",
+                "amount": amount,
+                "currency": "INR",
+                "status": gw_status,
+                "order_id": random_id("order_"),
+                "receipt": ord_ref if cat != "ghost_refund" else "",
+                "method": random.choice(PAYMENT_METHODS),
+                "fee": fee,
+                "tax": tax,
+                "email": "test@example.com",
+                "contact": "9999999999",
+                "description": "",
+                "acquirer_data": {"rrn": "123456", "auth_code": "000"},
+                "created_at": created_ts
+            })
                 
             if cat == "duplicate_payment":
                 gateway_payments.append({
@@ -295,24 +294,25 @@ def generate_data():
                 fee = 0
                 tax = 0
                 
-            settlement_recon.append({
-                "entity_id": recon_entity_id,
-                "type": recon_type,
-                "amount": recon_amt,
-                "currency": "INR",
-                "fee": fee,
-                "tax": tax,
-                "credit": recon_credit,
-                "debit": recon_debit,
-                "settlement_id": setl_id,
-                "utr": utr,
-                "settled_at": settled_ts,
-                "created_at": created_ts,
-                "on_hold": False,
-                "settled": True
-            })
+            if cat != "orphaned_record":
+                settlement_recon.append({
+                    "entity_id": recon_entity_id,
+                    "type": recon_type,
+                    "amount": recon_amt,
+                    "currency": "INR",
+                    "fee": fee,
+                    "tax": tax,
+                    "credit": recon_credit,
+                    "debit": recon_debit,
+                    "settlement_id": setl_id,
+                    "utr": utr,
+                    "settled_at": settled_ts,
+                    "created_at": created_ts,
+                    "on_hold": False,
+                    "settled": True
+                })
             
-            if cat != "missing_bank_entry":
+            if cat not in ["missing_bank_entry", "orphaned_record"]:
                 bank_entries_unsorted.append({
                     "date": datetime.datetime.fromtimestamp(settled_ts),
                     "description": bank_desc,

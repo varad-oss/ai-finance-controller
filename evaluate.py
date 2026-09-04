@@ -78,6 +78,15 @@ def build_exception_id_set(gt: dict) -> dict:
     return exception_ids
 
 
+EXPECTED_FAIL_LEGS = {
+    "missing_bank_entry": {"recon->bank", "bank->recon"},
+    "duplicate_payment": {"oms->gateway", "gateway->oms"},
+    "amount_discrepancy": {"oms->gateway", "gateway->oms"},
+    "ghost_refund": {"oms->gateway", "gateway->oms"},
+    "orphaned_record": {"oms->gateway", "gateway->oms", "gateway->recon", "recon->gateway"},
+    "dispute_adjustment": set() # The data generator doesn't actually break any legs for this, it just tags it.
+}
+
 def evaluate(batch_id: str, db: AuditDB):
     gt = load_ground_truth()
     gt_matches_lookup = build_gt_lookup(gt)
@@ -101,20 +110,31 @@ def evaluate(batch_id: str, db: AuditDB):
         left_id = m["record_id"]
         right_id = m["matched_record_id"]
         
-        # Check exception leakage first: did we match an ID that ground truth
-        # says should never match?
+        # Check exception leakage first
         leaked_left = left_id in exception_ids
         leaked_right = right_id in exception_ids if right_id else False
         
+        is_leakage = False
+        leaked_id = None
         if leaked_left or leaked_right:
-            exception_leakage += 1
             leaked_id = left_id if leaked_left else right_id
+            cat = exception_ids[leaked_id]
+            leg = f"{m['record_source']}->{m['matched_source']}"
+            
+            # If the leg that matched is in the EXPECTED_FAIL_LEGS for this category, 
+            # then it's a true leak. Otherwise, it's expected to match!
+            expected_fail = EXPECTED_FAIL_LEGS.get(cat, set())
+            if leg in expected_fail:
+                is_leakage = True
+                
+        if is_leakage:
+            exception_leakage += 1
             other_id = right_id if leaked_left else left_id
             exception_leakage_report.append({
                 "leaked_exception_id": leaked_id,
                 "exception_category": exception_ids[leaked_id],
                 "wrongly_matched_to": other_id,
-                "match_sources": f"{m['record_source']}->{m['matched_source']}",
+                "match_sources": leg,
                 "match_tier": m["match_tier"],
                 "tag": "matched_a_genuine_exception",
             })

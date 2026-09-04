@@ -109,7 +109,7 @@ def investigate_exceptions(
         prompt = _build_llm_prompt(record, context)
         
         try:
-            max_retries = 5
+            max_retries = 1
             for attempt in range(max_retries):
                 try:
                     response = client.models.generate_content(

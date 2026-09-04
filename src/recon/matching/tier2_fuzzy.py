@@ -72,10 +72,10 @@ def match_oms_to_gateway_fuzzy(
             score = 0.0
             rules = []
             
-            # Rule 1: Amount within tolerance
-            if _check_amount_tolerance(oms_rec.gross_amount, gw_rec.gross_amount, tolerance):
+            # Rule 1: Amount must be exact for OMS->Gateway
+            if oms_rec.gross_amount == gw_rec.gross_amount:
                 score += 0.4
-                rules.append("amount_within_tolerance")
+                rules.append("amount_exact")
             
             # Rule 2: Dates within window
             if _check_date_window(oms_rec.timestamp, gw_rec.timestamp, window):
