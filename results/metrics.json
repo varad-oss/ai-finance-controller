@@ -1,12 +1,14 @@
 {
-  "batch_id": "batch_4a46afa34c14",
+  "batch_id": "batch_0ce62445c3a9",
   "total_records": 480,
-  "matches_made": 345,
-  "correct_matches": 200,
-  "false_matches": 0,
-  "unverified_matches": 145,
+  "matches_made": 348,
+  "correct_matches": 290,
+  "false_matches": 10,
+  "exception_leakage": 42,
+  "exception_leakage_out_of": 20,
+  "unverified_matches": 6,
   "tier1_matched": 344,
-  "tier2_matched": 1,
+  "tier2_matched": 4,
   "tier3_matched": 0,
-  "processing_time_ms": 9763
+  "processing_time_ms": 707712
 }
