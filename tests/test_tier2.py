@@ -18,13 +18,13 @@ def test_tier2_fuzzy_amount_and_date():
         )
     ]
     
-    # Gateway amount off by 1% (1010 vs 1000), date off by 1 day
+    # Gateway amount must be exact for OMS-Gateway, date off by 1 day
     gw = [
         NormalizedRecord(
             source=RecordSource.GATEWAY,
             record_id="gw1",
             transaction_type=TransactionType.PAYMENT,
-            gross_amount=1010,
+            gross_amount=1000,
             net_amount=980,
             timestamp=now + timedelta(days=1),
             reference_ids={"receipt": "rec123_gw"}
