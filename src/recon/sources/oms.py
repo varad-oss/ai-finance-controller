@@ -24,14 +24,17 @@ class OMSSource(BaseSource):
         records = []
         
         for _, row in df.iterrows():
-            if row.get("status") != "completed":
+            status = row.get("status")
+            if status not in ["completed", "refunded"]:
                 continue
                 
             amount = int(row.get("amount", 0))
+            txn_type = TransactionType.REFUND if status == "refunded" else TransactionType.PAYMENT
+            
             record = NormalizedRecord(
                 source=RecordSource.OMS,
                 record_id=str(row.get("order_ref")),
-                transaction_type=TransactionType.PAYMENT,
+                transaction_type=txn_type,
                 gross_amount=amount,
                 net_amount=amount,
                 timestamp=pd.to_datetime(row.get("created_at")),

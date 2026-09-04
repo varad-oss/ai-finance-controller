@@ -69,7 +69,7 @@ def match_oms_to_gateway(
         for gw_record in candidates:
             if gw_record.record_id in matched_gateway_ids:
                 continue
-            if oms_record.gross_amount == gw_record.gross_amount:
+            if oms_record.gross_amount == gw_record.gross_amount and oms_record.transaction_type == gw_record.transaction_type:
                 matches.append(MatchResult(
                     left_source=RecordSource.OMS,
                     left_record_id=oms_record.record_id,
@@ -77,9 +77,9 @@ def match_oms_to_gateway(
                     right_record_id=gw_record.record_id,
                     match_tier=1,
                     confidence=1.0,
-                    rules_applied=["exact_receipt_match", "exact_amount_match"],
+                    rules_applied=["exact_receipt_match", "exact_amount_match", "type_match"],
                     decision="matched",
-                    explanation=f"Exact match: receipt={receipt}, amount={oms_record.gross_amount}",
+                    explanation=f"Exact match: receipt={receipt}, amount={oms_record.gross_amount}, type={oms_record.transaction_type.value}",
                 ))
                 matched_gateway_ids.add(gw_record.record_id)
                 matched = True
