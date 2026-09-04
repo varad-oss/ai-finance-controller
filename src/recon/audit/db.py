@@ -153,6 +153,27 @@ class AuditDB:
             )
             return cursor.lastrowid  # type: ignore[return-value]
 
+    def update_decision_to_match(
+        self,
+        decision_id: int,
+        matched_source: str,
+        matched_record_id: str,
+        confidence: float,
+        explanation: str
+    ) -> None:
+        """Update an existing decision (usually unreconcilable) to a matched state (used by Tier 3 AI)."""
+        with self._connect() as conn:
+            conn.execute(
+                """UPDATE match_decisions 
+                   SET decision = 'matched',
+                       matched_source = ?,
+                       matched_record_id = ?,
+                       confidence = ?,
+                       explanation = ?
+                   WHERE id = ?""",
+                (matched_source, matched_record_id, confidence, explanation, decision_id)
+            )
+
     def log_ai_investigation(
         self,
         match_decision_id: int,

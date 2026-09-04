@@ -5,6 +5,7 @@ Returns structured JSON with diagnosis and suggested actions.
 """
 
 import json
+import time
 import logging
 from typing import Optional
 from google import genai
@@ -108,28 +109,37 @@ def investigate_exceptions(
         prompt = _build_llm_prompt(record, context)
         
         try:
-            response = client.models.generate_content(
-                model=settings.llm_model,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    response_mime_type="application/json",
-                    response_schema=AIDiagnosis,
-                    system_instruction="You are a financial reconciliation expert AI.",
-                    temperature=0.0
-                )
-            )
-            
-            # The response text will be a valid JSON matching the schema
-            diagnosis_data = json.loads(response.text)
-            diagnosis = AIDiagnosis(**diagnosis_data)
-            
-            # Note: We aren't capturing token usage directly from this response structure for simplicity,
-            # but we can set them to 0 or parse from response.usage_metadata if available.
-            usage_in = 0
-            usage_out = 0
-            if hasattr(response, 'usage_metadata') and response.usage_metadata:
-                usage_in = response.usage_metadata.prompt_token_count
-                usage_out = response.usage_metadata.candidates_token_count
+            max_retries = 5
+            for attempt in range(max_retries):
+                try:
+                    response = client.models.generate_content(
+                        model=settings.llm_model,
+                        contents=prompt,
+                        config=types.GenerateContentConfig(
+                            response_mime_type="application/json",
+                            response_schema=AIDiagnosis,
+                            system_instruction="You are a financial reconciliation expert AI.",
+                            temperature=0.0
+                        )
+                    )
+                    
+                    # The response text will be a valid JSON matching the schema
+                    diagnosis_data = json.loads(response.text)
+                    diagnosis = AIDiagnosis(**diagnosis_data)
+                    
+                    usage_in = 0
+                    usage_out = 0
+                    if hasattr(response, 'usage_metadata') and response.usage_metadata:
+                        usage_in = response.usage_metadata.prompt_token_count
+                        usage_out = response.usage_metadata.candidates_token_count
+                    break # Success, break out of retry loop
+                except Exception as e:
+                    err_str = str(e)
+                    if "429" in err_str and attempt < max_retries - 1:
+                        logger.warning(f"Rate limited. Sleeping 25s before retry (attempt {attempt+1}/{max_retries})...")
+                        time.sleep(35)
+                    else:
+                        raise e
             
             if batch_decision_ids and record.record_id in batch_decision_ids:
                 decision_id = batch_decision_ids[record.record_id]
@@ -156,6 +166,7 @@ def investigate_exceptions(
                 confidence=diagnosis.confidence,
                 explanation=diagnosis.explanation,
                 suggested_action=action,
+                suggested_match_id=diagnosis.suggested_match_id,
                 investigated_by="tier3_ai"
             ))
             processed += 1

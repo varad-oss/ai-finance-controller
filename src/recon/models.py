@@ -50,4 +50,5 @@ class ExceptionRecord(BaseModel):
     confidence: float
     explanation: str
     suggested_action: str        # 'manual_review', 'write_off', 'investigate'
+    suggested_match_id: Optional[str] = None
     investigated_by: str = ""    # 'tier2_rules' or 'tier3_ai'
