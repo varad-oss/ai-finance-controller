@@ -30,7 +30,7 @@ class OMSSource(BaseSource):
             amount = int(row.get("amount", 0))
             record = NormalizedRecord(
                 source=RecordSource.OMS,
-                record_id=str(row.get("id")),
+                record_id=str(row.get("order_ref")),
                 transaction_type=TransactionType.PAYMENT,
                 gross_amount=amount,
                 net_amount=amount,
