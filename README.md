@@ -38,16 +38,16 @@ Reported on the full 478-record batch — nothing here is cherry-picked.
 |--------|-------|
 | Total Records Ingested | 478 |
 | **Total Records Accounted For** | **478 / 478** |
-| Processing Time | 8676 ms |
-| Total Matches Made | 340 |
+| Processing Time | ~410,000 ms (Rate-limited LLM API) |
+| Total Matches Made | 343 |
 | Verified Correct Matches | 300 |
-| Unverified Matches | 40 |
-| Exceptions Flagged | 38 |
+| Unverified Matches | 43 |
+| Exceptions Flagged | 35 |
 | False Matches (wrong pair) | 0 |
 | Exception Leakage | 0 |
 | Tier 1 Exact Matches | 339 |
 | Tier 2 Fuzzy Matches | 1 |
-| Tier 3 AI Matches | 0 |
+| Tier 3 AI Matches | 3 |
 
 ## Known Limitations & Evaluator Notes
 

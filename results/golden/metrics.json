@@ -1,0 +1,14 @@
+{
+  "batch_id": "batch_025fa7d8f13f",
+  "total_records": 478,
+  "matches_made": 343,
+  "correct_matches": 300,
+  "false_matches": 0,
+  "exception_leakage": 0,
+  "exception_leakage_out_of": 20,
+  "unverified_matches": 43,
+  "tier1_matched": 339,
+  "tier2_matched": 1,
+  "tier3_matched": 3,
+  "processing_time_ms": 409755
+}

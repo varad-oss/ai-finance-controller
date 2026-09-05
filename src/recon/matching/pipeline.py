@@ -129,22 +129,34 @@ class ReconciliationPipeline:
             batch_decision_ids=batch_decision_ids
         )
 
-        # Apply Tier 3 AI matches to the DB
         updated_decisions = set()
         for e in exceptions:
+            decision_id = batch_decision_ids.get(e.record_id)
+            if not decision_id:
+                continue
+
+            # Log the AI's explanation regardless of whether it's a match or an error
+            # If we don't do this, API errors (like 429 quota) are silently discarded
+            # and the user just sees "Failed Tier 1 and Tier 2" instead of the real reason.
             if e.suggested_action == "auto_match" and e.suggested_match_id:
-                # Find the matched source based on context
-                decision_id = batch_decision_ids.get(e.record_id)
-                if decision_id and decision_id not in updated_decisions:
+                if decision_id not in updated_decisions:
                     self.db.update_decision_to_match(
                         decision_id=decision_id,
-                        matched_source="AI_SUGGESTED", # Or we could derive it if we had it
+                        matched_source="AI_SUGGESTED",
                         matched_record_id=e.suggested_match_id,
                         match_tier=3,
                         confidence=e.confidence,
                         explanation=e.explanation
                     )
                     updated_decisions.add(decision_id)
+            else:
+                # Update the explanation for human review cases (including API errors)
+                # We need to execute an UPDATE on match_decisions for the explanation.
+                with self.db._connect() as conn:
+                    conn.execute(
+                        "UPDATE match_decisions SET explanation = ? WHERE id = ?",
+                        (f"Tier 3 Human Review: {e.explanation}", decision_id)
+                    )
 
         tier3_matched = len(updated_decisions)
         human_review = sum(1 for e in exceptions if e.suggested_action != "auto_match")
