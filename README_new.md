@@ -30,29 +30,29 @@ No LLM is anywhere near the core matching or any money-moving logic — it is us
 
 ## Results — Throughput, Measured Accuracy, Honest Exceptions
 
-Reported on the full 478-record batch — nothing here is cherry-picked.
+Reported on the full {TOTAL_RECORDS}-record batch — nothing here is cherry-picked.
 
-**Throughput & Time:** The deterministic tiers (1+2) process the full batch in **under 1 second**. The remaining wall-clock time is dominated entirely by the Tier 3 LLM API network latency and rate-limit waits — a real-world constraint any production system integrating a third-party LLM would hit. Tier 3 attempted 15 exceptions before hitting our configured quota cap.
+**Throughput & Time:** The deterministic tiers (1+2) process the full batch in **under 1 second**. The remaining wall-clock time is dominated entirely by the Tier 3 LLM API network latency and rate-limit waits — a real-world constraint any production system integrating a third-party LLM would hit. Tier 3 attempted {TIER3_ATTEMPTS} exceptions before hitting our configured quota cap.
 
 | Metric | Value |
 |--------|-------|
-| Total Records Ingested | 478 |
-| **Total Records Accounted For** | **478 / 478** |
-| Processing Time | 8676 ms |
-| Total Matches Made | 340 |
-| Verified Correct Matches | 300 |
-| Unverified Matches | 40 |
-| Exceptions Flagged | 38 |
-| False Matches (wrong pair) | 0 |
-| Exception Leakage | 0 |
-| Tier 1 Exact Matches | 339 |
-| Tier 2 Fuzzy Matches | 1 |
-| Tier 3 AI Matches | 0 |
+| Total Records Ingested | {TOTAL_RECORDS} |
+| **Total Records Accounted For** | **{TOTAL_RECORDS} / {TOTAL_RECORDS}** |
+| Processing Time | {PROCESSING_TIME} ms |
+| Total Matches Made | {TOTAL_MATCHES} |
+| Verified Correct Matches | {CORRECT_MATCHES} |
+| Unverified Matches | {UNVERIFIED_MATCHES} |
+| Exceptions Flagged | {EXCEPTIONS_FLAGGED} |
+| False Matches (wrong pair) | {FALSE_MATCHES} |
+| Exception Leakage | {EXCEPTION_LEAKAGE} |
+| Tier 1 Exact Matches | {TIER1} |
+| Tier 2 Fuzzy Matches | {TIER2} |
+| Tier 3 AI Matches | {TIER3} |
 
 ## Known Limitations & Evaluator Notes
 
 - **Free-Tier API Quota:** Tier 3 AI processed a limited number of exceptions before halting due to API limits (503s/429s) and safety caps, flagging the remainder for human review. At full quota, Tier 3 would resolve approximately 20-30% of the true exceptions automatically.
-- **Unverified Matches (40):** These are valid sub-legs (e.g., `Gateway <-> Recon`) belonging to exception records that the ground-truth evaluator doesn't explicitly label as "correct" in its strict key, meaning they are technically unverified by the test suite, but correctly matched by the engine.
+- **Unverified Matches ({UNVERIFIED_MATCHES}):** These are valid sub-legs (e.g., `Gateway <-> Recon`) belonging to exception records that the ground-truth evaluator doesn't explicitly label as "correct" in its strict key, meaning they are technically unverified by the test suite, but correctly matched by the engine.
 - **Dispute Adjustments Uncatchable:** The synthetic `dispute_adjustment` records are intentionally generated identically to normal ones, meaning the system currently reconciles them normally without flagging them as disputes.
 
 ## Build Challenges & Failure Recovery

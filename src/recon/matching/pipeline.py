@@ -129,22 +129,25 @@ class ReconciliationPipeline:
             batch_decision_ids=batch_decision_ids
         )
 
-        tier3_matched = sum(1 for e in exceptions if e.suggested_action == "auto_match")
-        human_review = sum(1 for e in exceptions if e.suggested_action != "auto_match")
-
         # Apply Tier 3 AI matches to the DB
+        updated_decisions = set()
         for e in exceptions:
             if e.suggested_action == "auto_match" and e.suggested_match_id:
                 # Find the matched source based on context
                 decision_id = batch_decision_ids.get(e.record_id)
-                if decision_id:
+                if decision_id and decision_id not in updated_decisions:
                     self.db.update_decision_to_match(
                         decision_id=decision_id,
                         matched_source="AI_SUGGESTED", # Or we could derive it if we had it
                         matched_record_id=e.suggested_match_id,
+                        match_tier=3,
                         confidence=e.confidence,
                         explanation=e.explanation
                     )
+                    updated_decisions.add(decision_id)
+
+        tier3_matched = len(updated_decisions)
+        human_review = sum(1 for e in exceptions if e.suggested_action != "auto_match")
 
         # 7. Complete Batch
         processing_time = int((time.time() - start_time) * 1000)

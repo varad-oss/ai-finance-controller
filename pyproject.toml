@@ -1,5 +1,5 @@
 [project]
-name = "razorpay-recon-agent"
+name = "ai-finance-controller"
 version = "0.1.0"
 description = "Multi-source reconciliation agent with AI-powered exception investigation"
 readme = "README.md"

@@ -158,6 +158,7 @@ class AuditDB:
         decision_id: int,
         matched_source: str,
         matched_record_id: str,
+        match_tier: int,
         confidence: float,
         explanation: str
     ) -> None:
@@ -168,10 +169,11 @@ class AuditDB:
                    SET decision = 'matched',
                        matched_source = ?,
                        matched_record_id = ?,
+                       match_tier = ?,
                        confidence = ?,
                        explanation = ?
                    WHERE id = ?""",
-                (matched_source, matched_record_id, confidence, explanation, decision_id)
+                (matched_source, matched_record_id, match_tier, confidence, explanation, decision_id)
             )
 
     def log_ai_investigation(

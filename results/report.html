@@ -31,15 +31,15 @@
             <span class="metric-label">Total Records</span>
         </div>
         <div class="metric">
-            <span class="metric-value" style="color: #059669;">344</span>
+            <span class="metric-value" style="color: #059669;">340</span>
             <span class="metric-label">Matched</span>
         </div>
         <div class="metric">
-            <span class="metric-value" style="color: #dc2626;">34</span>
+            <span class="metric-value" style="color: #dc2626;">38</span>
             <span class="metric-label">Exceptions (Review)</span>
         </div>
         <div class="metric">
-            <span class="metric-value" style="color: #4f46e5;">163217 ms</span>
+            <span class="metric-value" style="color: #4f46e5;">8676 ms</span>
             <span class="metric-label">Processing Time</span>
         </div>
     </div>
@@ -62,20 +62,9 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">oms</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">ORD-2024-0106</td>
-                <td><span class="badge badge-warning">duplicate</span></td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    The unmatched record ORD-2024-0106 matches the amount and receipt ID of gateway transaction pay_i1XrXUHLfpoVyb. However, there are duplicate records for pay_i1XrXUHLfpoVyb in the gateway with different order IDs and slightly different timestamps (15:13:20 vs 15:13:30), causing a one-to-many matching conflict that requires manual resolution.
-                    
-                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
-                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{
-  "diagnosis_category": "duplicate",
-  "confidence": 0.9,
-  "suggested_match_id": "pay_i1XrXUHLfpoVyb",
-  "explanation": "The unmatched record ORD-2024-0106 matches the amount and receipt ID of gateway transaction pay_i1XrXUHLfpoVyb. However, there are duplicate records for pay_i1XrXUHLfpoVyb in the gateway with different order IDs and slightly different timestamps (15:13:20 vs 15:13:30), causing a one-to-many matching conflict that requires manual resolution.",
-  "suggested_action": "manual_review"
-}</pre>
-                    </details>
+                    Failed Tier 1 and Tier 2 matching.
                     
                 </td>
                 <td>
@@ -103,20 +92,9 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">oms</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">ORD-2024-0108</td>
-                <td><span class="badge badge-warning">duplicate</span></td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    The unmatched OMS record ORD-2024-0108 matches the gateway payment pay_GAtd3zDE6vRbrl on both amount (3,217,500) and receipt ID. However, the gateway contains duplicate entries for pay_GAtd3zDE6vRbrl with different order IDs (order_I9wqPk1FYuhoIE and order_WVVI302Lgd6X7U) recorded 10 seconds apart. Additionally, there is a 5.5-hour timezone lag (likely UTC vs. IST) between the OMS date (02:12:36) and the gateway date (20:42:36). The duplicate gateway records and timezone difference prevented automatic 1:1 matching.
-                    
-                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
-                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{
-  "diagnosis_category": "duplicate",
-  "confidence": 0.95,
-  "suggested_match_id": "pay_GAtd3zDE6vRbrl",
-  "explanation": "The unmatched OMS record ORD-2024-0108 matches the gateway payment pay_GAtd3zDE6vRbrl on both amount (3,217,500) and receipt ID. However, the gateway contains duplicate entries for pay_GAtd3zDE6vRbrl with different order IDs (order_I9wqPk1FYuhoIE and order_WVVI302Lgd6X7U) recorded 10 seconds apart. Additionally, there is a 5.5-hour timezone lag (likely UTC vs. IST) between the OMS date (02:12:36) and the gateway date (20:42:36). The duplicate gateway records and timezone difference prevented automatic 1:1 matching.",
-  "suggested_action": "manual_review"
-}</pre>
-                    </details>
+                    Failed Tier 1 and Tier 2 matching.
                     
                 </td>
                 <td>
@@ -174,20 +152,9 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">oms</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">ORD-2024-0112</td>
-                <td><span class="badge badge-warning">fee_variance</span></td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    The unmatched OMS record ORD-2024-0112 matches the gateway record pay_hv1zJJ3WDSLVFC on the receipt reference 'ORD-2024-0112'. There is a minor amount discrepancy of 500 (4,867,900 vs 4,867,400), which likely represents a payment gateway processing fee, alongside a minor timing lag of approximately 5.5 hours.
-                    
-                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
-                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{
-  "diagnosis_category": "fee_variance",
-  "confidence": 0.95,
-  "suggested_match_id": "pay_hv1zJJ3WDSLVFC",
-  "explanation": "The unmatched OMS record ORD-2024-0112 matches the gateway record pay_hv1zJJ3WDSLVFC on the receipt reference 'ORD-2024-0112'. There is a minor amount discrepancy of 500 (4,867,900 vs 4,867,400), which likely represents a payment gateway processing fee, alongside a minor timing lag of approximately 5.5 hours.",
-  "suggested_action": "manual_review"
-}</pre>
-                    </details>
+                    Failed Tier 1 and Tier 2 matching.
                     
                 </td>
                 <td>
@@ -245,20 +212,9 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_Os38U9PXT5ugDc</td>
-                <td><span class="badge badge-warning">missing_record</span></td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    The unmatched gateway record (pay_Os38U9PXT5ugDc) references receipt ORD-2024-0095 and order_id order_v82fTB9XrX8A3i with a gross amount of 3,599,200. None of the provided near-misses from the OMS or recon sources match this receipt ID, order ID, or amount. This suggests that the corresponding order or settlement record is missing from the target systems.
-                    
-                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
-                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{
-  "diagnosis_category": "missing_record",
-  "confidence": 0.85,
-  "suggested_match_id": null,
-  "explanation": "The unmatched gateway record (pay_Os38U9PXT5ugDc) references receipt ORD-2024-0095 and order_id order_v82fTB9XrX8A3i with a gross amount of 3,599,200. None of the provided near-misses from the OMS or recon sources match this receipt ID, order ID, or amount. This suggests that the corresponding order or settlement record is missing from the target systems.",
-  "suggested_action": "investigate"
-}</pre>
-                    </details>
+                    Failed Tier 1 and Tier 2 matching.
                     
                 </td>
                 <td>
@@ -286,20 +242,9 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_0SRXz4hibvQiB9</td>
-                <td><span class="badge badge-warning">missing_record</span></td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    The gateway payment references receipt 'ORD-2024-0097' and order 'order_KmPbjUrJv1WMFe' with a gross amount of 4040100. No matching record with these identifiers or amount exists in the provided context. The corresponding order record appears to be missing from the OMS.
-                    
-                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
-                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{
-  "diagnosis_category": "missing_record",
-  "confidence": 0.9,
-  "suggested_match_id": null,
-  "explanation": "The gateway payment references receipt 'ORD-2024-0097' and order 'order_KmPbjUrJv1WMFe' with a gross amount of 4040100. No matching record with these identifiers or amount exists in the provided context. The corresponding order record appears to be missing from the OMS.",
-  "suggested_action": "investigate"
-}</pre>
-                    </details>
+                    Failed Tier 1 and Tier 2 matching.
                     
                 </td>
                 <td>
@@ -327,20 +272,9 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_jMfeUVXmPEqv1H</td>
-                <td><span class="badge badge-warning">missing_record</span></td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    The gateway record references receipt 'ORD-2024-0099' and order ID 'order_dKhwYKVMxA9zdp' with a gross amount of 3,982,200. No corresponding record with these identifiers or matching amount exists in the provided context from the OMS or other sources, indicating that the order record is likely missing from the internal systems.
-                    
-                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
-                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{
-  "diagnosis_category": "missing_record",
-  "confidence": 0.85,
-  "suggested_match_id": null,
-  "explanation": "The gateway record references receipt 'ORD-2024-0099' and order ID 'order_dKhwYKVMxA9zdp' with a gross amount of 3,982,200. No corresponding record with these identifiers or matching amount exists in the provided context from the OMS or other sources, indicating that the order record is likely missing from the internal systems.",
-  "suggested_action": "investigate"
-}</pre>
-                    </details>
+                    Failed Tier 1 and Tier 2 matching.
                     
                 </td>
                 <td>
@@ -353,20 +287,24 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_xyJYgPuFVvMwBE</td>
-                <td><span class="badge badge-warning">missing_record</span></td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    The unmatched gateway payment (pay_xyJYgPuFVvMwBE) with receipt ORD-2024-0100 and gross amount 3,873,400 does not match the provided OMS record (ORD-2024-0107, amount 316,600). The corresponding order record 'order_MGlEOZ6qNY045T' or receipt 'ORD-2024-0100' appears to be missing from the OMS dataset.
+                    Failed Tier 1 and Tier 2 matching.
                     
-                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
-                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{
-  "diagnosis_category": "missing_record",
-  "confidence": 0.9,
-  "suggested_match_id": null,
-  "explanation": "The unmatched gateway payment (pay_xyJYgPuFVvMwBE) with receipt ORD-2024-0100 and gross amount 3,873,400 does not match the provided OMS record (ORD-2024-0107, amount 316,600). The corresponding order record 'order_MGlEOZ6qNY045T' or receipt 'ORD-2024-0100' appears to be missing from the OMS dataset.",
-  "suggested_action": "investigate"
-}</pre>
-                    </details>
+                </td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">pay_i1XrXUHLfpoVyb</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>
+                    Failed Tier 1 and Tier 2 matching.
                     
                 </td>
                 <td>
@@ -409,6 +347,21 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_2sKCPMq72llUL2</td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td>
+                    Failed Tier 1 and Tier 2 matching.
+                    
+                </td>
+                <td>
+                    
+                    -
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
+                <td style="font-family: monospace; font-size: 0.875rem;">pay_GAtd3zDE6vRbrl</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
                     Failed Tier 1 and Tier 2 matching.
@@ -484,20 +437,9 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_hv1zJJ3WDSLVFC</td>
-                <td><span class="badge badge-warning">data_entry_error</span></td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    The unmatched gateway record matches the OMS record ORD-2024-0112 on the receipt reference ID ('ORD-2024-0112') and has a very close timestamp (within 6 hours, likely due to timezone differences). However, there is a minor discrepancy of 500 in the gross amount (4,867,400 in gateway vs 4,867,900 in OMS), which suggests a data entry error or a minor price adjustment.
-                    
-                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
-                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{
-  "diagnosis_category": "data_entry_error",
-  "confidence": 0.95,
-  "suggested_match_id": "ORD-2024-0112",
-  "explanation": "The unmatched gateway record matches the OMS record ORD-2024-0112 on the receipt reference ID ('ORD-2024-0112') and has a very close timestamp (within 6 hours, likely due to timezone differences). However, there is a minor discrepancy of 500 in the gross amount (4,867,400 in gateway vs 4,867,900 in OMS), which suggests a data entry error or a minor price adjustment.",
-  "suggested_action": "manual_review"
-}</pre>
-                    </details>
+                    Failed Tier 1 and Tier 2 matching.
                     
                 </td>
                 <td>
@@ -525,14 +467,9 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_kHefRZS92nFX26</td>
-                <td><span class="badge badge-warning">missing_record</span></td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    The unmatched gateway transaction with order_id 'order_8xLx0Y8hwlaUVQ' and gross amount 3,364,400 does not correspond to any of the provided OMS records. The near-misses have different amounts and order IDs, suggesting the matching OMS record is missing.
-                    
-                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
-                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{"diagnosis_category":"missing_record","confidence":0.85,"suggested_match_id":null,"explanation":"The unmatched gateway transaction with order_id 'order_8xLx0Y8hwlaUVQ' and gross amount 3,364,400 does not correspond to any of the provided OMS records. The near-misses have different amounts and order IDs, suggesting the matching OMS record is missing.","suggested_action":"investigate"}</pre>
-                    </details>
+                    Failed Tier 1 and Tier 2 matching.
                     
                 </td>
                 <td>
@@ -575,20 +512,9 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_vf0A6zB0bi2sTE</td>
-                <td><span class="badge badge-warning">missing_record</span></td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    The unmatched gateway record references receipt 'ORD-2024-0120' and order 'order_kPlZLbm4xmsGCw', but no corresponding record with these identifiers exists in the provided OMS context. The near-misses contain older orders (ORD-2024-0106 and ORD-2024-0109), suggesting that the transaction record for ORD-2024-0120 is missing from the destination system.
-                    
-                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
-                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{
-  "diagnosis_category": "missing_record",
-  "confidence": 0.9,
-  "suggested_match_id": null,
-  "explanation": "The unmatched gateway record references receipt 'ORD-2024-0120' and order 'order_kPlZLbm4xmsGCw', but no corresponding record with these identifiers exists in the provided OMS context. The near-misses contain older orders (ORD-2024-0106 and ORD-2024-0109), suggesting that the transaction record for ORD-2024-0120 is missing from the destination system.",
-  "suggested_action": "investigate"
-}</pre>
-                    </details>
+                    Failed Tier 1 and Tier 2 matching.
                     
                 </td>
                 <td>
@@ -616,20 +542,9 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">rfnd_lYMYn87cERLa9N</td>
-                <td><span class="badge badge-warning">missing_record</span></td>
+                <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    The unmatched record is a gateway refund of 3,364,400 dated 2024-06-18. None of the provided OMS records match this amount or reference the payment ID 'pay_kHefRZS92nFX26'. This suggests the refund transaction is missing from the OMS system.
-                    
-                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
-                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{
-  "diagnosis_category": "missing_record",
-  "confidence": 0.85,
-  "suggested_match_id": null,
-  "explanation": "The unmatched record is a gateway refund of 3,364,400 dated 2024-06-18. None of the provided OMS records match this amount or reference the payment ID 'pay_kHefRZS92nFX26'. This suggests the refund transaction is missing from the OMS system.",
-  "suggested_action": "investigate"
-}</pre>
-                    </details>
+                    Failed Tier 1 and Tier 2 matching.
                     
                 </td>
                 <td>
@@ -739,8 +654,8 @@
             </tr>
             <tr>
                 <td>Tier 3 (AI Investigation)</td>
-                <td>4</td>
-                <td>0.8%</td>
+                <td>0</td>
+                <td>0.0%</td>
             </tr>
         </tbody>
     </table>
