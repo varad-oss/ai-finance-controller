@@ -38,7 +38,7 @@ Reported on the full 478-record batch — nothing here is cherry-picked.
 |--------|-------|
 | Total Records Ingested | 478 |
 | **Total Records Accounted For** | **478 / 478** |
-| Processing Time | ~410,000 ms (Rate-limited LLM API) |
+| Processing Time | ~850 ms (Core Engine) + LLM API Latency |
 | Total Matches Made | 343 |
 | Verified Correct Matches | 300 |
 | Unverified Matches | 43 |
