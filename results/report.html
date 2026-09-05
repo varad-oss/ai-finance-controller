@@ -31,15 +31,15 @@
             <span class="metric-label">Total Records</span>
         </div>
         <div class="metric">
-            <span class="metric-value" style="color: #059669;">340</span>
+            <span class="metric-value" style="color: #059669;">343</span>
             <span class="metric-label">Matched</span>
         </div>
         <div class="metric">
-            <span class="metric-value" style="color: #dc2626;">38</span>
+            <span class="metric-value" style="color: #dc2626;">35</span>
             <span class="metric-label">Exceptions (Review)</span>
         </div>
         <div class="metric">
-            <span class="metric-value" style="color: #4f46e5;">8676 ms</span>
+            <span class="metric-value" style="color: #4f46e5;">409755 ms</span>
             <span class="metric-label">Processing Time</span>
         </div>
     </div>
@@ -62,9 +62,14 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">oms</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">ORD-2024-0106</td>
-                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td><span class="badge badge-warning">duplicate</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    The unmatched OMS record ORD-2024-0106 matches payment gateway transaction pay_i1XrXUHLfpoVyb in both amount (4,814,200) and receipt ID. The time difference (15:13:20 UTC vs 20:43:20) corresponds exactly to a +05:30 timezone offset (IST). However, auto-matching failed due to duplicate transaction entries in the gateway for pay_i1XrXUHLfpoVyb associated with the same receipt but different order IDs.
+                    
+                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
+                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{"diagnosis_category":"duplicate","confidence":0.95,"suggested_match_id":"pay_i1XrXUHLfpoVyb","explanation":"The unmatched OMS record ORD-2024-0106 matches payment gateway transaction pay_i1XrXUHLfpoVyb in both amount (4,814,200) and receipt ID. The time difference (15:13:20 UTC vs 20:43:20) corresponds exactly to a +05:30 timezone offset (IST). However, auto-matching failed due to duplicate transaction entries in the gateway for pay_i1XrXUHLfpoVyb associated with the same receipt but different order IDs.","suggested_action":"manual_review"}</pre>
+                    </details>
                     
                 </td>
                 <td>
@@ -79,7 +84,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">ORD-2024-0107</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 11.947765789s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-3.6-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '11s'}]}}
                     
                 </td>
                 <td>
@@ -94,7 +99,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">ORD-2024-0108</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
                     
                 </td>
                 <td>
@@ -109,7 +114,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">ORD-2024-0109</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 21.316548354s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.6-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '21s'}]}}
                     
                 </td>
                 <td>
@@ -122,9 +127,14 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">oms</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">ORD-2024-0110</td>
-                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td><span class="badge badge-warning">fee_variance</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    The unmatched record ORD-2024-0110 matches gateway record pay_2StvZ3LjzN3MMB on receipt ID 'ORD-2024-0110' and date (2024-06-26). There is a slight discrepancy of 500 between the OMS amount (2,768,400) and gateway amount (2,767,900), indicating a fee variance or small adjustment.
+                    
+                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
+                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{"diagnosis_category":"fee_variance","confidence":0.95,"suggested_match_id":"pay_2StvZ3LjzN3MMB","explanation":"The unmatched record ORD-2024-0110 matches gateway record pay_2StvZ3LjzN3MMB on receipt ID 'ORD-2024-0110' and date (2024-06-26). There is a slight discrepancy of 500 between the OMS amount (2,768,400) and gateway amount (2,767,900), indicating a fee variance or small adjustment.","suggested_action":"manual_review"}</pre>
+                    </details>
                     
                 </td>
                 <td>
@@ -139,22 +149,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">ORD-2024-0111</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
-                    
-                </td>
-                <td>
-                    
-                    -
-                    
-                </td>
-            </tr>
-            
-            <tr>
-                <td><span class="badge" style="background: #e5e7eb; color: #374151;">oms</span></td>
-                <td style="font-family: monospace; font-size: 0.875rem;">ORD-2024-0112</td>
-                <td><span class="badge badge-warning">Unreconcilable</span></td>
-                <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 58.779561688s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.6-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}}
                     
                 </td>
                 <td>
@@ -169,7 +164,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_h3SKumPuWugT1x</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 57.936525672s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-3.6-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '57s'}]}}
                     
                 </td>
                 <td>
@@ -184,7 +179,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_wo9aPkCJK8CiRl</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
                     
                 </td>
                 <td>
@@ -197,9 +192,14 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_yl7ekgjjm7bzQ5</td>
-                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td><span class="badge badge-warning">missing_record</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    No matching record found in OMS for receipt ORD-2024-0094 or order_id order_Sr80QPjocthqlI. The near-miss record provided (ORD-2024-0107) has a completely different amount and reference identifiers.
+                    
+                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
+                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{"diagnosis_category":"missing_record","confidence":0.85,"suggested_match_id":null,"explanation":"No matching record found in OMS for receipt ORD-2024-0094 or order_id order_Sr80QPjocthqlI. The near-miss record provided (ORD-2024-0107) has a completely different amount and reference identifiers.","suggested_action":"investigate"}</pre>
+                    </details>
                     
                 </td>
                 <td>
@@ -214,7 +214,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_Os38U9PXT5ugDc</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
                     
                 </td>
                 <td>
@@ -229,7 +229,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_ZrEZsKETnXjsNN</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 40.045830249s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.6-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '40s'}]}}
                     
                 </td>
                 <td>
@@ -242,9 +242,14 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_0SRXz4hibvQiB9</td>
-                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td><span class="badge badge-warning">missing_record</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    The payment record pay_0SRXz4hibvQiB9 references order/receipt ORD-2024-0097 for amount 4040100, but no corresponding order record exists in the OMS context candidates.
+                    
+                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
+                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{"diagnosis_category":"missing_record","confidence":0.95,"suggested_match_id":null,"explanation":"The payment record pay_0SRXz4hibvQiB9 references order/receipt ORD-2024-0097 for amount 4040100, but no corresponding order record exists in the OMS context candidates.","suggested_action":"investigate"}</pre>
+                    </details>
                     
                 </td>
                 <td>
@@ -259,7 +264,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_8AFzVtCGEwrSfE</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 25.9987225s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-3.6-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '25s'}]}}
                     
                 </td>
                 <td>
@@ -272,9 +277,20 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_jMfeUVXmPEqv1H</td>
-                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td><span class="badge badge-warning">missing_record</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    The payment gateway record (pay_jMfeUVXmPEqv1H) references order_id 'order_dKhwYKVMxA9zdp' and receipt 'ORD-2024-0099' for gross amount 3,982,200. None of the near-miss candidates match this receipt ID, order ID, or amount. The corresponding order or settlement record appears to be missing from OMS/recon.
+                    
+                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
+                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{
+  "diagnosis_category": "missing_record",
+  "confidence": 0.95,
+  "suggested_match_id": null,
+  "explanation": "The payment gateway record (pay_jMfeUVXmPEqv1H) references order_id 'order_dKhwYKVMxA9zdp' and receipt 'ORD-2024-0099' for gross amount 3,982,200. None of the near-miss candidates match this receipt ID, order ID, or amount. The corresponding order or settlement record appears to be missing from OMS/recon.",
+  "suggested_action": "investigate"
+}</pre>
+                    </details>
                     
                 </td>
                 <td>
@@ -287,24 +303,14 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_xyJYgPuFVvMwBE</td>
-                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td><span class="badge badge-warning">missing_record</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    No matching OMS record was found for receipt ORD-2024-0100 or order ID order_MGlEOZ6qNY045T. The candidate near-miss record ORD-2024-0107 differs significantly in receipt reference, date, and transaction amount.
                     
-                </td>
-                <td>
-                    
-                    -
-                    
-                </td>
-            </tr>
-            
-            <tr>
-                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
-                <td style="font-family: monospace; font-size: 0.875rem;">pay_i1XrXUHLfpoVyb</td>
-                <td><span class="badge badge-warning">Unreconcilable</span></td>
-                <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
+                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{"diagnosis_category":"missing_record","confidence":0.95,"suggested_match_id":null,"explanation":"No matching OMS record was found for receipt ORD-2024-0100 or order ID order_MGlEOZ6qNY045T. The candidate near-miss record ORD-2024-0107 differs significantly in receipt reference, date, and transaction amount.","suggested_action":"investigate"}</pre>
+                    </details>
                     
                 </td>
                 <td>
@@ -349,22 +355,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_2sKCPMq72llUL2</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
-                    
-                </td>
-                <td>
-                    
-                    -
-                    
-                </td>
-            </tr>
-            
-            <tr>
-                <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
-                <td style="font-family: monospace; font-size: 0.875rem;">pay_GAtd3zDE6vRbrl</td>
-                <td><span class="badge badge-warning">Unreconcilable</span></td>
-                <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 2.606034847s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.6-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '2s'}]}}
                     
                 </td>
                 <td>
@@ -394,7 +385,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_L1gIFkhmwTRVE1</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 16.615451819s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-3.6-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '16s'}]}}
                     
                 </td>
                 <td>
@@ -407,9 +398,14 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_2StvZ3LjzN3MMB</td>
-                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td><span class="badge badge-warning">data_entry_error</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    The unmatched record has a receipt reference 'ORD-2024-0110' which exactly matches the OMS record ORD-2024-0110 on the same date (2024-06-26). There is a minor amount discrepancy of 500 (2,767,900 gross vs 2,768,400 order amount), likely due to a minor data entry or rounding error.
+                    
+                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
+                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{"diagnosis_category":"data_entry_error","confidence":0.92,"suggested_match_id":"ORD-2024-0110","explanation":"The unmatched record has a receipt reference 'ORD-2024-0110' which exactly matches the OMS record ORD-2024-0110 on the same date (2024-06-26). There is a minor amount discrepancy of 500 (2,767,900 gross vs 2,768,400 order amount), likely due to a minor data entry or rounding error.","suggested_action":"manual_review"}</pre>
+                    </details>
                     
                 </td>
                 <td>
@@ -424,7 +420,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_PSGpuKZwgSZfd3</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 54.104452952s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.6-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '54s'}]}}
                     
                 </td>
                 <td>
@@ -439,7 +435,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_hv1zJJ3WDSLVFC</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
                     
                 </td>
                 <td>
@@ -454,7 +450,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_z1tphgkipftzkM</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 12.825348875s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.6-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '12s'}]}}
                     
                 </td>
                 <td>
@@ -469,7 +465,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_kHefRZS92nFX26</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
                     
                 </td>
                 <td>
@@ -484,7 +480,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_JEIOJQJeheqJoG</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 35.356085389s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.6-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '35s'}]}}
                     
                 </td>
                 <td>
@@ -499,7 +495,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_ifBvKCMACzXtxl</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 44.7260636s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.6-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '44s'}]}}
                     
                 </td>
                 <td>
@@ -512,9 +508,14 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_vf0A6zB0bi2sTE</td>
-                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td><span class="badge badge-warning">missing_record</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    The payment record pay_vf0A6zB0bi2sTE references receipt ORD-2024-0120 and order order_kPlZLbm4xmsGCw with gross amount 4755000, but no matching order or settlement record was found among the candidate near-misses.
+                    
+                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
+                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{"diagnosis_category":"missing_record","confidence":0.85,"suggested_match_id":null,"explanation":"The payment record pay_vf0A6zB0bi2sTE references receipt ORD-2024-0120 and order order_kPlZLbm4xmsGCw with gross amount 4755000, but no matching order or settlement record was found among the candidate near-misses.","suggested_action":"investigate"}</pre>
+                    </details>
                     
                 </td>
                 <td>
@@ -529,7 +530,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">rfnd_cY7MOkd5qpQ90n</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 8.148170683s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-3.6-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '8s'}]}}
                     
                 </td>
                 <td>
@@ -542,9 +543,14 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">gateway</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">rfnd_lYMYn87cERLa9N</td>
-                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td><span class="badge badge-warning">missing_record</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    The gateway refund record rfnd_lYMYn87cERLa9N for 3,364,400 with payment_id pay_kHefRZS92nFX26 has no matching order or credit memo record in the OMS near-misses, suggesting the corresponding refund entry is missing in the OMS system.
+                    
+                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
+                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{"diagnosis_category":"missing_record","confidence":0.85,"suggested_match_id":null,"explanation":"The gateway refund record rfnd_lYMYn87cERLa9N for 3,364,400 with payment_id pay_kHefRZS92nFX26 has no matching order or credit memo record in the OMS near-misses, suggesting the corresponding refund entry is missing in the OMS system.","suggested_action":"investigate"}</pre>
+                    </details>
                     
                 </td>
                 <td>
@@ -559,7 +565,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">rfnd_0pD7ZYGoeLBfBh</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 30.668697675s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-3.6-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '30s'}]}}
                     
                 </td>
                 <td>
@@ -574,7 +580,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_oojbXtE9A4mqbW</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 49.401362884s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.6-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '49s'}]}}
                     
                 </td>
                 <td>
@@ -589,7 +595,7 @@
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_DprWiDwtO4cTXd</td>
                 <td><span class="badge badge-warning">Unreconcilable</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    Tier 3 Human Review: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\nPlease retry in 3.474954588s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.6-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '3s'}]}}
                     
                 </td>
                 <td>
@@ -602,9 +608,14 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">recon</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_iyMtfjG8ZV0QXt</td>
-                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td><span class="badge badge-warning">missing_record</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    No corresponding record was found in either the OMS or Gateway context matching the Gross Amount 4149700, settlement ID, or UTR details for payment pay_iyMtfjG8ZV0QXt.
+                    
+                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
+                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{"diagnosis_category":"missing_record","confidence":0.85,"suggested_match_id":null,"explanation":"No corresponding record was found in either the OMS or Gateway context matching the Gross Amount 4149700, settlement ID, or UTR details for payment pay_iyMtfjG8ZV0QXt.","suggested_action":"investigate"}</pre>
+                    </details>
                     
                 </td>
                 <td>
@@ -617,9 +628,14 @@
             <tr>
                 <td><span class="badge" style="background: #e5e7eb; color: #374151;">recon</span></td>
                 <td style="font-family: monospace; font-size: 0.875rem;">pay_t9Vj0OXdjocqRB</td>
-                <td><span class="badge badge-warning">Unreconcilable</span></td>
+                <td><span class="badge badge-warning">missing_record</span></td>
                 <td>
-                    Failed Tier 1 and Tier 2 matching.
+                    The recon payment record (ID: pay_t9Vj0OXdjocqRB) with gross amount 2,875,800 and net amount 2,807,932 dated 2024-07-28 has no corresponding payment or order entry in the gateway or OMS context records.
+                    
+                    <details style="margin-top: 0.5rem; font-size: 0.875rem; background: #f9fafb; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #4b5563;">View Raw AI Response</summary>
+                        <pre style="white-space: pre-wrap; font-family: monospace; margin-top: 0.5rem; color: #374151;">{"diagnosis_category":"missing_record","confidence":0.95,"suggested_match_id":null,"explanation":"The recon payment record (ID: pay_t9Vj0OXdjocqRB) with gross amount 2,875,800 and net amount 2,807,932 dated 2024-07-28 has no corresponding payment or order entry in the gateway or OMS context records.","suggested_action":"investigate"}</pre>
+                    </details>
                     
                 </td>
                 <td>
@@ -654,8 +670,8 @@
             </tr>
             <tr>
                 <td>Tier 3 (AI Investigation)</td>
-                <td>0</td>
-                <td>0.0%</td>
+                <td>3</td>
+                <td>0.6%</td>
             </tr>
         </tbody>
     </table>

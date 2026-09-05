@@ -183,9 +183,10 @@ def investigate_exceptions(
                 suggested_action="manual_review",
                 investigated_by="tier3_ai"
             ))
+            
+        time.sleep(4.5)  # Enforce 15 RPM free tier limit
 
     return exceptions
-
 
 def _fallback_flag_exceptions(unmatched_by_source: dict[str, list[NormalizedRecord]]) -> list[ExceptionRecord]:
     """Fallback if LLM is not configured."""
